@@ -17,6 +17,8 @@ enum EStatusInput {
 })
 export class LoginPageComponent implements OnInit {
 
+  condition = true;
+
   EStatusInput = EStatusInput;
 
   statusInput = EStatusInput.default
@@ -31,24 +33,28 @@ export class LoginPageComponent implements OnInit {
 
   ngOnInit(): void { }
 
-  ngAfterViewInit() {
-    this.openLogInModal();
+  // ngAfterViewInit() {
+  //   this.openLogInModal();
 
-  }
+  // }
 
-  openLogInModal(): void {
-    const dialogConfig = new MatDialogConfig();
-    dialogConfig.disableClose = true;
+  // openLogInModal(): void {
+  //   const dialogConfig = new MatDialogConfig();
+  //   dialogConfig.disableClose = true;
 
-    const dialogRef = this.dialog.open(this.modalLogIn, dialogConfig);
+  //   const dialogRef = this.dialog.open(this.modalLogIn, dialogConfig);
 
-    // dialogRef.afterClosed().subscribe(result => {
-    //   console.log(`Dialog result: ${result}`);
-    //   if (result) {
-    //     this.handleClick()
-    //   }
-    // });
+  //   // dialogRef.afterClosed().subscribe(result => {
+  //   //   console.log(`Dialog result: ${result}`);
+  //   //   if (result) {
+  //   //     this.handleClick()
+  //   //   }
+  //   // });
 
+  // }
+
+  handleToggle() {
+    this.condition = !this.condition;
   }
 
   handleChange(v) {
@@ -60,9 +66,7 @@ export class LoginPageComponent implements OnInit {
   }
 
   handleClick() {
-
     this.store.dispatch(authLogInManagerRequest({ email: this.valueInputEmail }))
-
   }
 
 }

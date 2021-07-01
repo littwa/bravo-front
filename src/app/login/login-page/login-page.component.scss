@@ -2,7 +2,25 @@
   padding: 15px 0 0 15px;
 }
 
+.custom-overlay-check {
+  background: #f8f8f8;
+  height: 100vh;
+}
+
+.role-toggle {
+  width: max-content;
+  margin: 10px auto;
+}
+
+.role-toggle button {
+  width: 100px;
+  margin: 10px 20px;
+}
+
 .container-login {
+  width: 50vh;
+  margin: 0 auto;
+  background:#fff;
   display: flex;
   align-items: center;
   flex-direction: column;
