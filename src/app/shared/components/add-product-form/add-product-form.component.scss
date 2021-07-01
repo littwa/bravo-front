@@ -1,0 +1,67 @@
+.cont-unit-price {
+  display: flex;
+  align-items: center;
+}
+.add-prod p {
+  margin-bottom: 0;
+}
+
+.availability-inp {
+  margin-top: 5px;
+}
+
+.del-icon-cost {
+  cursor: pointer;
+  padding-left: 5px;
+  line-height: 35px;
+}
+
+.wrap-del-icon:hover path {
+  fill: #F5413D;
+}
+
+.cost-container .cost-container-inner:nth-child(1) .wrap-del-icon {
+  display: none;
+}
+
+.del-icon-cost:hover svg {
+  background-color: #ffd5d5;
+}
+
+.wrap-del-icon{
+  align-self: flex-end;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  // margin-left: 2px;
+}
+
+.wrap-del-icon:hover {
+  background-color: #ffd5d5;
+  cursor: pointer;
+}
+
+::ng-deep {
+
+  .mat-dialog-container .add-prod {
+    width: 420px;
+ }
+
+  .add-prod .mat-form-field-wrapper {
+    padding-bottom: 6px;
+  }
+
+  .add-prod .mat-form-field-infix {
+    width: 100%;
+  }
+
+  .add-prod .mat-form-field {
+    width: 100%;
+  }
+  .add-prod .cont-unit-price .uinit-inp {
+     margin-right: 5px;
+
+  }
+}
+

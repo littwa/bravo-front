@@ -1,0 +1,74 @@
+[
+  {
+    "productCode": "APP123",
+    "product": "Apples",
+    "unit": "kg",
+    "price": {"kg":"12.3","pcs":"4.33","box":"2.01"},
+    "quantity": "14",
+    "availability": "In stock",
+    "exclusively": "ii",
+    "replacementProducts":"yuyu"
+  },
+  {
+    "productCode": "TOM153",
+    "product": "Tomatos",
+    "unit": "box",
+    "price": {"box":"08.3", "kg":"17.5"},
+    "quantity": "4",
+    "availability": "Out of stock",
+    "exclusively": "qwe",
+    "replacementProducts":"lpoi"
+  },
+  {
+    "productCode": "CUC997",
+    "product": "Cucumber",
+    "unit": "pcs",
+    "price": {"pcs":"1.3", "kg":"0.37"},
+    "quantity": "36",
+    "availability": "In stock",
+    "exclusively": "aasdqwe",
+    "replacementProducts":"cvbvbn"
+  },
+  {
+    "productCode": "BAN777",
+    "product": "Banan",
+    "unit": "pcs",
+    "price": {"pcs":"1.3", "kg":"0.37"},
+    "quantity": "26",
+    "availability": "In stock",
+    "exclusively": "aasdqwe",
+    "replacementProducts":"cvbvbn"
+  },
+  {
+    "productCode": "BER997",
+    "product": "Bery",
+    "unit": "pcs",
+    "price": {"pcs":"1.3", "kg":"0.37"},
+    "quantity": "36",
+    "availability": "In stock",
+    "exclusively": "aasdqwe",
+    "replacementProducts":"cvbvbn"
+  },
+  {
+    "productCode": "CUR555",
+    "product": "Currot",
+    "unit": "pcs",
+    "price": {"pcs":"1.3", "kg":"0.37"},
+    "quantity": "3",
+    "availability": "In stock",
+    "exclusively": "aasd-eqwe",
+    "replacementProducts":"cvbvbn"
+  },
+  {
+    "productCode": "KOKS995",
+    "product": "Koks",
+    "unit": "pcs",
+    "price": {"pcs":"1.3", "kg":"0.37"},
+    "quantity": "6",
+    "availability": "In stock",
+    "exclusively": "aa4sd-pppqwe",
+    "replacementProducts":"cvbvq-bn"
+  }
+]
+
+

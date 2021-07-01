@@ -1,0 +1,54 @@
+.example-element-detail {
+  overflow: hidden;
+  display: flex;
+}
+
+
+.inner-table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.inner-row {
+    border-bottom: 1px solid purple;
+
+}
+
+.inner-row td, .inner-row th {
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+.inner-row th {
+  text-align: start;
+}
+
+.example-element-description {
+  padding: 16px;
+}
+
+.example-element-description-attribution {
+  opacity: 0.5;
+}
+
+.element-description-label {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 28px;
+  & span {
+    vertical-align: top;
+    margin-left: 5px;
+  }
+
+  &:hover {
+    cursor:pointer;
+  }
+
+}
+
+.info-container-description {
+ display: flex;
+ justify-content: space-between;
+}
+

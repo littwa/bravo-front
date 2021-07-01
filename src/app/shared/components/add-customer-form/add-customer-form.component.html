@@ -1,0 +1,50 @@
+<app-modal-container  (btn)="submitFormCustomer()" title="Add Customer" btnText=" + Add Customer">
+
+  <form class="custom-prod" [formGroup]="form">
+    <p>Customer No</p>
+    <mat-form-field appearance="outline">
+      <input formControlName="customerNo" matInput placeholder="Customer No">
+    </mat-form-field>
+
+    <p>Name</p>
+    <mat-form-field appearance="outline">
+      <input formControlName="name" matInput placeholder="Name">
+    </mat-form-field>
+
+    <p>Delivery Address</p>
+    <mat-form-field appearance="outline">
+      <input formControlName="deliveryAddress" matInput placeholder="Delivery Address">
+    </mat-form-field>
+
+    <p>Delivery Days</p>
+    <ul class="checkbox-container"  [formGroupName]="'deliveryDays'" appearance="outline">
+      <li><mat-checkbox [color]="'primary'" formControlName="Mon">Mon</mat-checkbox></li>
+      <li><mat-checkbox [color]="'primary'" formControlName="Wed">Wed</mat-checkbox></li>
+      <li><mat-checkbox [color]="'primary'" formControlName="Fri">Fri</mat-checkbox></li>
+      <li><mat-checkbox [color]="'primary'" formControlName="Tue">Tue</mat-checkbox></li>
+      <li class="checkbox-breack"></li>
+      <li><mat-checkbox [color]="'primary'" formControlName="Thu">Thu</mat-checkbox></li>
+      <li><mat-checkbox [color]="'primary'" formControlName="Sat">Sat</mat-checkbox></li>
+      <li><mat-checkbox [color]="'primary'" formControlName="Sun">Sun</mat-checkbox></li>
+    </ul >
+
+    <p>Contact Name</p>
+    <mat-form-field appearance="outline">
+      <input formControlName="contactName" matInput placeholder="Contact Name">
+    </mat-form-field>
+
+
+    <mat-form-field appearance="outline">
+      <input formControlName="mobilePhone" matInput placeholder="Mobile Phone">
+    </mat-form-field>
+
+    <mat-checkbox [color]="'primary'" formControlName="notifyCustomerMessage"><b>Notify customer via text message</b></mat-checkbox>
+    <p>Shortlisted Products</p>
+    <mat-form-field appearance="outline">
+
+      <textarea formControlName="shortlistedProducts" matInput></textarea>
+    </mat-form-field>
+
+  </form>
+
+</app-modal-container>

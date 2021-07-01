@@ -1,0 +1,53 @@
+[
+  {
+    "customerNo": "BB-146",
+    "name": "Grosya Bar",
+    "deliveryDays": {"Mon": false, "Wed": true, "Fri": true, "Tue": true, "Thu": true, "Sat": true, "Sun": false},
+    "shortlistedProducts": "",
+    "deliveryAddress": "Budn Street 5543 Nezhin",
+    "contactName": "Sam Smith",
+    "mobilePhone": "+380661115544",
+    "notifyCustomerMessage": true
+  },
+  {
+    "customerNo": "BB-135",
+    "name": "Burger Bar",
+    "deliveryDays": {"Mon": false, "Wed": true, "Fri": true, "Tue": true, "Thu": true, "Sat": true, "Sun": true},
+    "shortlistedProducts": "",
+    "deliveryAddress": "Kosmonavt Street 1278 Chernigov",
+    "contactName": "Frenk Dot",
+    "mobilePhone": "+380664415544",
+    "notifyCustomerMessage": true
+  },
+  {
+    "customerNo": "BB-775",
+    "name": "Zosya Restorik",
+    "deliveryDays": {"Mon": true, "Wed": false, "Fri": true, "Tue": false, "Thu": true, "Sat": true, "Sun": false},
+    "shortlistedProducts": "",
+    "deliveryAddress": "Second Street 3421 Kiev",
+    "contactName": "Tom Smith",
+    "mobilePhone": "+380667775533",
+    "notifyCustomerMessage": true
+  },
+  {
+    "customerNo": "BB-890",
+    "name": "Super Kabak",
+    "deliveryDays": {"Mon": false, "Wed": true, "Fri": true, "Tue": true, "Thu": false, "Sat": true, "Sun": false},
+    "shortlistedProducts": "",
+    "deliveryAddress": "12 Street 3421 Geneva",
+    "contactName": "Sam Smith",
+    "mobilePhone": "+380667775544",
+    "notifyCustomerMessage": true
+  },
+  {
+    "customerNo": "BB-234",
+    "name": "Fucking Bar",
+    "deliveryDays": {"Mon": false, "Wed": true, "Fri": false, "Tue": true, "Thu": true, "Sat": true, "Sun": true},
+    "shortlistedProducts": "short listed Products Text",
+    "deliveryAddress": "44 Street 7111 Berlin",
+    "contactName": "Sam Daw",
+    "mobilePhone": "+380667775544",
+    "notifyCustomerMessage": true
+  }
+
+]

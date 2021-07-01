@@ -1,0 +1,149 @@
+.btn-absolut-container {
+  position: absolute;
+  top: 16px;
+  right: 18px;
+}
+
+.color-btn-txt {
+  color: #1672EC;
+}
+
+.mat-elevation-z8 {
+  margin: 20px;
+}
+table {
+  width: 100%;
+
+}
+
+.remove-product {
+  cursor: pointer;
+  padding-left: 5px;
+  line-height: 35px;
+}
+
+.container-paginator {
+  margin: 10px;
+  background-color: #fafafa;
+}
+
+.wrap-del-icon:hover path {
+  fill: #F5413D;
+}
+.remove-product:hover svg {
+  background-color: #ffd5d5;
+}
+.wrap-del-icon{
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+
+.wrap-del-icon:hover {
+  background-color: #ffd5d5;
+  cursor: pointer;
+}
+
+.wrapper-select-available {
+  display: inline;
+  cursor: pointer;
+}
+
+table th {
+  font-weight: 500;
+  font-size: 14px;
+  color: #000;
+}
+
+.mat-row-no-data .mat-cell.no-data-cell{
+  width: 100%;
+  margin: 0 auto;
+}
+
+.no-data-container {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  display: flex;
+   flex-direction: column;
+  align-items: center;
+ }
+
+ .edit-cell {
+   cursor: pointer;
+   &:hover {
+    text-decoration: underline;
+   }
+ }
+
+ .spinner-container {
+  margin: 40px auto;
+ }
+
+::ng-deep {
+
+  .wrapper-select-available .mat-form-field-type-mat-select {
+    width: 0;
+    height: 0;
+    border: none;
+  }
+
+  .wrapper-select-available .mat-form-field-wrapper .mat-form-field-flex {
+    background: url(/assets/image/sort-size.svg) no-repeat center ;
+    height: 15px;
+    width: 15px;
+    align-items: center;
+  }
+
+  .wrapper-select-available .mat-form-field-type-mat-select .mat-form-field-outline,
+  .wrapper-select-available .mat-form-field-type-mat-select .mat-select-arrow-wrapper {
+    display: none;
+  }
+
+  .wrapper-select-available .mat-form-field-wrapper {
+    padding-bottom: 0;
+  }
+
+  div.btn-absolut-container .mat-flat-button {
+    background-color: #fafafa;
+  }
+
+  div.btn-absolut-container .mat-flat-button:hover {
+    background-color: #e0e0e080;
+    transition: 300ms
+  }
+
+
+  .mat-paginator-range-label {
+    width: 120px;
+   }
+
+   .mat-form-field-underline {
+     display: none;
+   }
+
+   .mat-paginator-page-size-select .mat-form-field-flex .mat-form-field-infix {
+     border: solid 1px #a1a1a1;
+     border-radius: 5px;
+     padding: 10px;
+   }
+
+   .mat-paginator-range-actions button {
+      background-color: #e0e0e080;
+      margin-right: 4px;
+   }
+
+}
+
+@media (max-width: 920px) {
+  .mat-elevation-z8.table--container {
+    overflow: scroll;
+    width: 680px;
+  }
+}
+
+@media (max-width: 520px) {
+  .mat-elevation-z8.table--container {
+    overflow: scroll;
+    width: 280px;
+  }
+}

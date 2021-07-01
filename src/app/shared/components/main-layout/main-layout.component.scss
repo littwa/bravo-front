@@ -1,0 +1,40 @@
+.container-menu {
+  display: flex;
+}
+
+.nav-icon {
+  width: max-content;
+  box-sizing: border-box;
+  height: 100vh;
+  list-style: none;
+  padding: 10px 0 0 0;
+  margin: 0;
+  display: grid;
+  grid-template-rows: 2fr 1fr 1fr 1fr 14fr;
+}
+
+.nav-icon li:nth-last-child(1) {
+  align-self: end;
+}
+
+.nav-icon li {
+  height: 48px;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.activelink {
+  background-color: #C5DCFA;
+}
+
+.activelink path {
+  fill: #1672EC;
+}
+
+.menu {
+  width: 100vw;
+}
+
+
+

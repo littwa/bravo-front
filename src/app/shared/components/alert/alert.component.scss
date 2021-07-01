@@ -1,0 +1,28 @@
+.alert-wrap {
+  overflow: hidden;
+  padding: 4px;
+  position: fixed;
+  top: 65px;
+  right: 40px;
+  max-width: 200px;
+  min-width: 100px;
+  max-height: 70px;
+  text-align: center;
+  z-index: 2;
+}
+
+.alert-success {
+  background-color: #00d812;
+}
+
+.alert-warning {
+  background-color: #ffc400;
+}
+
+.alert-danger {
+  background-color: #ff6565;
+}
+
+.alert-del {
+  background-color: #c990ff;
+}

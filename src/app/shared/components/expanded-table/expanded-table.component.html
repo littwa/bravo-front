@@ -1,0 +1,36 @@
+<div class="example-element-description">
+<div class="info-container-description" >
+  <div>
+    <small class="element-description-label"> Notes: </small>
+    <p> {{row.notes}} </p>
+  </div>
+
+  <div>
+    <small class="element-description-label"> Delivery Address: </small>
+    <p> {{row.ordered.timezone}} </p>
+  </div>
+
+  <div>
+    <p class="element-description-label">
+      <mat-icon>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M16 4H8V6H16V4ZM6 6H2V18H6V22H18V18H22V6H18V2H6V6ZM4 16H6V14H18V16H20V8H4V16ZM16 16H8V20H16V16ZM16 10H18V12H16V10Z" fill="black"/>
+          </svg>
+      </mat-icon>
+        <span>Print Order</span>
+       </p>
+
+  </div>
+
+</div>
+
+<table class="inner-table">
+  <tr class="inner-row"><th>Product Code</th><th>Product</th><th>Unit</th><th>Quantity</th></tr>
+  <tr class="inner-row" *ngFor="let product of row.productsList">
+    <td>{{product.productCode}}</td>
+    <td>{{product.product}}</td>
+    <td>{{product.unit}}</td>
+    <td>{{product.quantity}}</td>
+  </tr>
+</table>
+</div>

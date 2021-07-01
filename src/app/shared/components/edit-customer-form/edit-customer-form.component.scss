@@ -1,0 +1,52 @@
+.custom-prod-edit p {
+  margin-bottom: 0;
+}
+
+.checkbox-container li.checkbox-breack {
+  width: 100%;
+}
+
+.checkbox-container {
+display: flex;
+flex-wrap: wrap;
+padding: 0;
+}
+
+.checkbox-container li {
+  list-style: none;
+  padding-right: 20px;
+  padding-bottom: 5px;
+  min-width: 15%;
+}
+
+.custom-prod-edit p {
+  font-size: 12px;
+}
+
+::ng-deep {
+
+  .mat-dialog-container .custom-prod-edit   {
+    width: 420px;
+ }
+
+  .custom-prod-edit .mat-form-field-wrapper {
+    padding-bottom: 6px;
+  }
+
+  .checkbox-container .mat-checkbox-inner-container {
+  margin-top: 3px;
+  }
+
+  .custom-prod-edit .mat-form-field-infix {
+    width: 100%;
+  }
+
+  .custom-prod-edit .mat-form-field {
+    width: 100%;
+  }
+
+  .custom-prod-edit .cont-unit-price .uinit-inp {
+     margin-right: 5px;
+
+  }
+}

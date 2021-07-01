@@ -1,0 +1,11 @@
+
+<h2 mat-dialog-title class="del-dialog-title"><span >{{ title }}</span><span><mat-icon class="cursor-pointer" [mat-dialog-close]="false">close</mat-icon></span></h2>
+<mat-dialog-content class="mat-typography">
+  <ng-content></ng-content>
+  <hr>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-raised-button mat-dialog-close>Cancel</button>
+  <button  (click)="btn.emit()" mat-raised-button [mat-dialog-close]="true" color="primary" cdkFocusInitial>{{ btnText }}</button>
+</mat-dialog-actions>
+<!-- [disabled]="true" -->

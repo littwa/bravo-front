@@ -1,0 +1,632 @@
+[
+  {
+    "orderNo": "20345",
+    "customer": "Gyoza SS",
+    "customerNo": "GZ-889",
+    "items": "43",
+    "notes": "Any Text",
+    "ordered": {
+      "date": "2020-12-02 04:31:00.000000",
+      "timezone_type": "3",
+      "timezone": "Europe/Kiev"
+    },
+    "reqDelivery": {
+      "date": "2020-12-05",
+      "timezone_type": "3",
+      "timezone": "Europe/Kiev"
+    },
+    "status": true,
+    "productsList": [
+      {
+        "productCode": "APP123",
+        "product": "Apples",
+        "unit": "kg",
+        "price": {"kg":"12.3","pcs":"4.33","box":"2.01"},
+        "quantity": "14",
+        "availability": "In stock",
+        "exclusively": "ii",
+        "replacementProducts":"yuyu"
+      },
+      {
+        "productCode": "TOM153",
+        "product": "Tomatos",
+        "unit": "box",
+        "price": {"box":"08.3", "kg":"17.5"},
+        "quantity": "4",
+        "availability": "Out of stock",
+        "exclusively": "qwe",
+        "replacementProducts":"lpoi"
+      },
+      {
+        "productCode": "CUC997",
+        "product": "Cucumber",
+        "unit": "pcs",
+        "price": {"pcs":"1.3", "kg":"0.37"},
+        "quantity": "36",
+        "availability": "In stock",
+        "exclusively": "aasdqwe",
+        "replacementProducts":"cvbvbn"
+      },
+      {
+        "productCode": "BAN777",
+        "product": "Banan",
+        "unit": "pcs",
+        "price": {"pcs":"1.3", "kg":"0.37"},
+        "quantity": "26",
+        "availability": "In stock",
+        "exclusively": "aasdqwe",
+        "replacementProducts":"cvbvbn"
+      },
+      {
+        "productCode": "BER997",
+        "product": "Bery",
+        "unit": "pcs",
+        "price": {"pcs":"1.3", "kg":"0.37"},
+        "quantity": "36",
+        "availability": "In stock",
+        "exclusively": "aasdqwe",
+        "replacementProducts":"cvbvbn"
+      },
+      {
+        "productCode": "CUR555",
+        "product": "Currot",
+        "unit": "pcs",
+        "price": {"pcs":"1.3", "kg":"0.37"},
+        "quantity": "3",
+        "availability": "In stock",
+        "exclusively": "aasd-eqwe",
+        "replacementProducts":"cvbvbn"
+      },
+      {
+        "productCode": "KOKS995",
+        "product": "Koks",
+        "unit": "pcs",
+        "price": {"pcs":"1.3", "kg":"0.37"},
+        "quantity": "6",
+        "availability": "In stock",
+        "exclusively": "aa4sd-pppqwe",
+        "replacementProducts":"cvbvq-bn"
+      }
+    ]
+  },
+  {
+    "orderNo": "20674",
+    "customer": "Bar XX",
+    "customerNo": "GZ-889",
+    "items": "12",
+    "notes": "Any Text",
+    "ordered": {
+      "date": "2020-12-04 04:31:00.000000",
+      "timezone_type": "3",
+      "timezone": "Europe/Kiev"
+    },
+    "reqDelivery": {
+      "date": "2020-12-09",
+      "timezone_type": "3",
+      "timezone": "Europe/Kiev"
+    },
+    "status": true,
+    "productsList": [
+      {
+        "productCode": "APP123",
+        "product": "Apples",
+        "unit": "kg",
+        "price": {"kg":"12.3","pcs":"4.33","box":"2.01"},
+        "quantity": "14",
+        "availability": "In stock",
+        "exclusively": "ii",
+        "replacementProducts":"yuyu"
+      },
+      {
+        "productCode": "TOM153",
+        "product": "Tomatos",
+        "unit": "box",
+        "price": {"box":"08.3", "kg":"17.5"},
+        "quantity": "4",
+        "availability": "Out of stock",
+        "exclusively": "qwe",
+        "replacementProducts":"lpoi"
+      },
+      {
+        "productCode": "CUC997",
+        "product": "Cucumber",
+        "unit": "pcs",
+        "price": {"pcs":"1.3", "kg":"0.37"},
+        "quantity": "36",
+        "availability": "In stock",
+        "exclusively": "aasdqwe",
+        "replacementProducts":"cvbvbn"
+      },
+      {
+        "productCode": "BAN777",
+        "product": "Banan",
+        "unit": "pcs",
+        "price": {"pcs":"1.3", "kg":"0.37"},
+        "quantity": "26",
+        "availability": "In stock",
+        "exclusively": "aasdqwe",
+        "replacementProducts":"cvbvbn"
+      },
+      {
+        "productCode": "BER997",
+        "product": "Bery",
+        "unit": "pcs",
+        "price": {"pcs":"1.3", "kg":"0.37"},
+        "quantity": "36",
+        "availability": "In stock",
+        "exclusively": "aasdqwe",
+        "replacementProducts":"cvbvbn"
+      },
+      {
+        "productCode": "CUR555",
+        "product": "Currot",
+        "unit": "pcs",
+        "price": {"pcs":"1.3", "kg":"0.37"},
+        "quantity": "3",
+        "availability": "In stock",
+        "exclusively": "aasd-eqwe",
+        "replacementProducts":"cvbvbn"
+      },
+      {
+        "productCode": "KOKS995",
+        "product": "Koks",
+        "unit": "pcs",
+        "price": {"pcs":"1.3", "kg":"0.37"},
+        "quantity": "6",
+        "availability": "In stock",
+        "exclusively": "aa4sd-pppqwe",
+        "replacementProducts":"cvbvq-bn"
+      }
+    ]
+  },
+  {
+    "orderNo": "20115",
+    "customer": "Resort AAA",
+    "customerNo": "GZ-889",
+    "items": "43",
+    "notes": "Any text",
+    "ordered": {
+      "date": "2020-12-07 02:31:00.000000",
+      "timezone_type": "3",
+      "timezone": "Europe/Kiev"
+    },
+    "reqDelivery": {
+      "date": "2020-12-09",
+      "timezone_type": "3",
+      "timezone": "Europe/Kiev"
+    },
+    "status": true,
+    "productsList": [
+      {
+        "productCode": "APP123",
+        "product": "Apples",
+        "unit": "kg",
+        "price": {"kg":"12.3","pcs":"4.33","box":"2.01"},
+        "quantity": "14",
+        "availability": "In stock",
+        "exclusively": "ii",
+        "replacementProducts":"yuyu"
+      },
+      {
+        "productCode": "TOM153",
+        "product": "Tomatos",
+        "unit": "box",
+        "price": {"box":"08.3", "kg":"17.5"},
+        "quantity": "4",
+        "availability": "Out of stock",
+        "exclusively": "qwe",
+        "replacementProducts":"lpoi"
+      },
+      {
+        "productCode": "CUC997",
+        "product": "Cucumber",
+        "unit": "pcs",
+        "price": {"pcs":"1.3", "kg":"0.37"},
+        "quantity": "36",
+        "availability": "In stock",
+        "exclusively": "aasdqwe",
+        "replacementProducts":"cvbvbn"
+      },
+      {
+        "productCode": "BAN777",
+        "product": "Banan",
+        "unit": "pcs",
+        "price": {"pcs":"1.3", "kg":"0.37"},
+        "quantity": "26",
+        "availability": "In stock",
+        "exclusively": "aasdqwe",
+        "replacementProducts":"cvbvbn"
+      },
+      {
+        "productCode": "BER997",
+        "product": "Bery",
+        "unit": "pcs",
+        "price": {"pcs":"1.3", "kg":"0.37"},
+        "quantity": "36",
+        "availability": "In stock",
+        "exclusively": "aasdqwe",
+        "replacementProducts":"cvbvbn"
+      },
+      {
+        "productCode": "CUR555",
+        "product": "Currot",
+        "unit": "pcs",
+        "price": {"pcs":"1.3", "kg":"0.37"},
+        "quantity": "3",
+        "availability": "In stock",
+        "exclusively": "aasd-eqwe",
+        "replacementProducts":"cvbvbn"
+      },
+      {
+        "productCode": "KOKS995",
+        "product": "Koks",
+        "unit": "pcs",
+        "price": {"pcs":"1.3", "kg":"0.37"},
+        "quantity": "6",
+        "availability": "In stock",
+        "exclusively": "aa4sd-pppqwe",
+        "replacementProducts":"cvbvq-bn"
+      }
+    ]
+  },
+  {
+    "orderNo": "20765",
+    "customer": "Gyoza SSY",
+    "customerNo": "GZ-889",
+    "items": "43",
+    "notes": "Any Text",
+    "ordered": {
+      "date": "2020-12-11 04:31:00.000000",
+      "timezone_type": "3",
+      "timezone": "Europe/Kiev"
+    },
+    "reqDelivery": {
+      "date": "2020-12-17",
+      "timezone_type": "3",
+      "timezone": "Europe/Kiev"
+    },
+    "status": false,
+    "productsList": [
+      {
+        "productCode": "APP123",
+        "product": "Apples",
+        "unit": "kg",
+        "price": {"kg":"12.3","pcs":"4.33","box":"2.01"},
+        "quantity": "14",
+        "availability": "In stock",
+        "exclusively": "ii",
+        "replacementProducts":"yuyu"
+      },
+      {
+        "productCode": "TOM153",
+        "product": "Tomatos",
+        "unit": "box",
+        "price": {"box":"08.3", "kg":"17.5"},
+        "quantity": "4",
+        "availability": "Out of stock",
+        "exclusively": "qwe",
+        "replacementProducts":"lpoi"
+      },
+      {
+        "productCode": "CUC997",
+        "product": "Cucumber",
+        "unit": "pcs",
+        "price": {"pcs":"1.3", "kg":"0.37"},
+        "quantity": "36",
+        "availability": "In stock",
+        "exclusively": "aasdqwe",
+        "replacementProducts":"cvbvbn"
+      },
+      {
+        "productCode": "BAN777",
+        "product": "Banan",
+        "unit": "pcs",
+        "price": {"pcs":"1.3", "kg":"0.37"},
+        "quantity": "26",
+        "availability": "In stock",
+        "exclusively": "aasdqwe",
+        "replacementProducts":"cvbvbn"
+      },
+      {
+        "productCode": "BER997",
+        "product": "Bery",
+        "unit": "pcs",
+        "price": {"pcs":"1.3", "kg":"0.37"},
+        "quantity": "36",
+        "availability": "In stock",
+        "exclusively": "aasdqwe",
+        "replacementProducts":"cvbvbn"
+      },
+      {
+        "productCode": "CUR555",
+        "product": "Currot",
+        "unit": "pcs",
+        "price": {"pcs":"1.3", "kg":"0.37"},
+        "quantity": "3",
+        "availability": "In stock",
+        "exclusively": "aasd-eqwe",
+        "replacementProducts":"cvbvbn"
+      },
+      {
+        "productCode": "KOKS995",
+        "product": "Koks",
+        "unit": "pcs",
+        "price": {"pcs":"1.3", "kg":"0.37"},
+        "quantity": "6",
+        "availability": "In stock",
+        "exclusively": "aa4sd-pppqwe",
+        "replacementProducts":"cvbvq-bn"
+      }
+    ]
+  },
+  {
+    "orderNo": "20643",
+    "customer": "Gyoza SS",
+    "customerNo": "GZ-889",
+    "items": "43",
+    "notes": "Any Text",
+    "ordered": {
+      "date": "2020-12-02 04:31:00.000000",
+      "timezone_type": "3",
+      "timezone": "Europe/Kiev"
+    },
+    "reqDelivery": {
+      "date": "2020-12-02",
+      "timezone_type": "3",
+      "timezone": "Europe/Kiev"
+    },
+    "status": true,
+    "productsList": [
+      {
+        "productCode": "APP123",
+        "product": "Apples",
+        "unit": "kg",
+        "price": {"kg":"12.3","pcs":"4.33","box":"2.01"},
+        "quantity": "14",
+        "availability": "In stock",
+        "exclusively": "ii",
+        "replacementProducts":"yuyu"
+      },
+      {
+        "productCode": "TOM153",
+        "product": "Tomatos",
+        "unit": "box",
+        "price": {"box":"08.3", "kg":"17.5"},
+        "quantity": "4",
+        "availability": "Out of stock",
+        "exclusively": "qwe",
+        "replacementProducts":"lpoi"
+      },
+      {
+        "productCode": "CUC997",
+        "product": "Cucumber",
+        "unit": "pcs",
+        "price": {"pcs":"1.3", "kg":"0.37"},
+        "quantity": "36",
+        "availability": "In stock",
+        "exclusively": "aasdqwe",
+        "replacementProducts":"cvbvbn"
+      },
+      {
+        "productCode": "BAN777",
+        "product": "Banan",
+        "unit": "pcs",
+        "price": {"pcs":"1.3", "kg":"0.37"},
+        "quantity": "26",
+        "availability": "In stock",
+        "exclusively": "aasdqwe",
+        "replacementProducts":"cvbvbn"
+      },
+      {
+        "productCode": "BER997",
+        "product": "Bery",
+        "unit": "pcs",
+        "price": {"pcs":"1.3", "kg":"0.37"},
+        "quantity": "36",
+        "availability": "In stock",
+        "exclusively": "aasdqwe",
+        "replacementProducts":"cvbvbn"
+      },
+      {
+        "productCode": "CUR555",
+        "product": "Currot",
+        "unit": "pcs",
+        "price": {"pcs":"1.3", "kg":"0.37"},
+        "quantity": "3",
+        "availability": "In stock",
+        "exclusively": "aasd-eqwe",
+        "replacementProducts":"cvbvbn"
+      },
+      {
+        "productCode": "KOKS995",
+        "product": "Koks",
+        "unit": "pcs",
+        "price": {"pcs":"1.3", "kg":"0.37"},
+        "quantity": "6",
+        "availability": "In stock",
+        "exclusively": "aa4sd-pppqwe",
+        "replacementProducts":"cvbvq-bn"
+      }
+    ]
+  },
+  {
+    "orderNo": "20111",
+    "customer": "Gyoza SS",
+    "customerNo": "GZ-889",
+    "items": "43",
+    "notes": "Any Text",
+    "ordered": {
+      "date": "2020-12-11 04:31:00.000000",
+      "timezone_type": "3",
+      "timezone": "Europe/Kiev"
+    },
+    "reqDelivery": {
+      "date": "2020-12-22",
+      "timezone_type": "3",
+      "timezone": "Europe/Kiev"
+    },
+    "status": true,
+    "productsList": [
+      {
+        "productCode": "APP123",
+        "product": "Apples",
+        "unit": "kg",
+        "price": {"kg":"12.3","pcs":"4.33","box":"2.01"},
+        "quantity": "14",
+        "availability": "In stock",
+        "exclusively": "ii",
+        "replacementProducts":"yuyu"
+      },
+      {
+        "productCode": "TOM153",
+        "product": "Tomatos",
+        "unit": "box",
+        "price": {"box":"08.3", "kg":"17.5"},
+        "quantity": "4",
+        "availability": "Out of stock",
+        "exclusively": "qwe",
+        "replacementProducts":"lpoi"
+      },
+      {
+        "productCode": "CUC997",
+        "product": "Cucumber",
+        "unit": "pcs",
+        "price": {"pcs":"1.3", "kg":"0.37"},
+        "quantity": "36",
+        "availability": "In stock",
+        "exclusively": "aasdqwe",
+        "replacementProducts":"cvbvbn"
+      },
+      {
+        "productCode": "BAN777",
+        "product": "Banan",
+        "unit": "pcs",
+        "price": {"pcs":"1.3", "kg":"0.37"},
+        "quantity": "26",
+        "availability": "In stock",
+        "exclusively": "aasdqwe",
+        "replacementProducts":"cvbvbn"
+      },
+      {
+        "productCode": "BER997",
+        "product": "Bery",
+        "unit": "pcs",
+        "price": {"pcs":"1.3", "kg":"0.37"},
+        "quantity": "36",
+        "availability": "In stock",
+        "exclusively": "aasdqwe",
+        "replacementProducts":"cvbvbn"
+      },
+      {
+        "productCode": "CUR555",
+        "product": "Currot",
+        "unit": "pcs",
+        "price": {"pcs":"1.3", "kg":"0.37"},
+        "quantity": "3",
+        "availability": "In stock",
+        "exclusively": "aasd-eqwe",
+        "replacementProducts":"cvbvbn"
+      },
+      {
+        "productCode": "KOKS995",
+        "product": "Koks",
+        "unit": "pcs",
+        "price": {"pcs":"1.3", "kg":"0.37"},
+        "quantity": "6",
+        "availability": "In stock",
+        "exclusively": "aa4sd-pppqwe",
+        "replacementProducts":"cvbvq-bn"
+      }
+    ]
+  },
+  {
+    "orderNo": "20456",
+    "customer": "Gyoza SS",
+    "customerNo": "GZ-889",
+    "items": "43",
+    "notes": "Any Text2",
+    "ordered": {
+      "date": "2020-12-22 04:31:00.000000",
+      "timezone_type": "3",
+      "timezone": "Europe/Kiev"
+    },
+    "reqDelivery": {
+      "date": "2020-12-25",
+      "timezone_type": "3",
+      "timezone": "Europe/Kiev"
+    },
+    "status": false,
+    "productsList": [
+      {
+        "productCode": "APP123",
+        "product": "Apples",
+        "unit": "kg",
+        "price": {"kg":"12.3","pcs":"4.33","box":"2.01"},
+        "quantity": "14",
+        "availability": "In stock",
+        "exclusively": "ii",
+        "replacementProducts":"yuyu"
+      },
+      {
+        "productCode": "TOM153",
+        "product": "Tomatos",
+        "unit": "box",
+        "price": {"box":"08.3", "kg":"17.5"},
+        "quantity": "4",
+        "availability": "Out of stock",
+        "exclusively": "qwe",
+        "replacementProducts":"lpoi"
+      },
+      {
+        "productCode": "CUC997",
+        "product": "Cucumber",
+        "unit": "pcs",
+        "price": {"pcs":"1.3", "kg":"0.37"},
+        "quantity": "36",
+        "availability": "In stock",
+        "exclusively": "aasdqwe",
+        "replacementProducts":"cvbvbn"
+      },
+      {
+        "productCode": "BAN777",
+        "product": "Banan",
+        "unit": "pcs",
+        "price": {"pcs":"1.3", "kg":"0.37"},
+        "quantity": "26",
+        "availability": "In stock",
+        "exclusively": "aasdqwe",
+        "replacementProducts":"cvbvbn"
+      },
+      {
+        "productCode": "BER997",
+        "product": "Bery",
+        "unit": "pcs",
+        "price": {"pcs":"1.3", "kg":"0.37"},
+        "quantity": "36",
+        "availability": "In stock",
+        "exclusively": "aasdqwe",
+        "replacementProducts":"cvbvbn"
+      },
+      {
+        "productCode": "CUR555",
+        "product": "Currot",
+        "unit": "pcs",
+        "price": {"pcs":"1.3", "kg":"0.37"},
+        "quantity": "3",
+        "availability": "In stock",
+        "exclusively": "aasd-eqwe",
+        "replacementProducts":"cvbvbn"
+      },
+      {
+        "productCode": "KOKS995",
+        "product": "Koks",
+        "unit": "pcs",
+        "price": {"pcs":"1.3", "kg":"0.37"},
+        "quantity": "6",
+        "availability": "In stock",
+        "exclusively": "aa4sd-pppqwe",
+        "replacementProducts":"cvbvq-bn"
+      }
+    ]
+  }
+]

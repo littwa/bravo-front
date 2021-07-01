@@ -1,0 +1,24 @@
+.search-main {
+  width: 38%;
+  margin-left: 20px;
+}
+
+.input--margin {
+    margin-left: 10px;
+}
+
+
+::ng-deep {
+  .mat-form-field-flex div.mat-form-field-infix {
+    border-top: 0;
+    padding-bottom: 10px ;
+  }
+}
+
+@media (max-width: 520px) {
+
+  .search-main {
+    width: 87%;
+  }
+
+}

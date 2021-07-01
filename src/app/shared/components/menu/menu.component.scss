@@ -1,0 +1,44 @@
+.sidenav-container {
+  display: flex;
+  height: 100vh;
+}
+.nav-icon{
+  min-width: 120px;
+  box-sizing: border-box;
+  height: 100vh;
+  list-style: none;
+  padding: 10px 0 0 0px;
+  margin: 0;
+  display: grid;
+  grid-template-rows: 2fr 1fr 1fr 1fr 14fr;
+
+}
+
+.nav-icon li:nth-last-child(1){
+  align-self: end;
+}
+
+.nav-icon li{
+  line-height: 48px;
+  height: 48px;
+  font-size: 16px;
+  font-weight: 500;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+.activelink {
+  background-color: #C5DCFA;
+  border-top-right-radius:10px;
+  border-bottom-right-radius:10px;
+  color: #1672EC;
+}
+
+.sidenav-content-width {
+  width: 100%;
+}
+
+
+
+
