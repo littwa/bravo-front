@@ -1,0 +1,69 @@
+.inp {
+ border: 1px solid #000;
+padding-left: 10px;
+}
+
+.inp input {
+  width:400px;
+  height: 30px;
+  padding: 0;
+  border: none;
+}
+
+.order-add {
+  margin-bottom: 30px;
+}
+
+.order-add p {
+  margin-bottom: 0;
+}
+
+.checkbox-container li.checkbox-breack {
+  width: 100%;
+}
+
+.checkbox-container {
+display: flex;
+flex-wrap: wrap;
+padding: 0;
+}
+
+.checkbox-container li {
+  list-style: none;
+  padding-right: 20px;
+  padding-bottom: 5px;
+  min-width: 15%;
+}
+
+.order-add p {
+  font-size: 12px;
+}
+
+
+::ng-deep {
+
+  .order-add .mat-form-field-wrapper {
+    padding-bottom: 6px;
+  }
+
+   .mat-dialog-container .order-add {
+     width: 440px;
+  }
+
+  .order-add .checkbox-container .mat-checkbox-inner-container {
+  margin-top: 3px;
+  }
+
+  .order-add .mat-form-field-infix {
+    width: 100%;
+  }
+
+  .order-add .mat-form-field {
+    width: 100%;
+  }
+
+  .order-add .cont-unit-price .uinit-inp {
+     margin-right: 5px;
+
+  }
+}

@@ -10,6 +10,7 @@ export interface StateAuth {
 export interface StateManger {
   isAuthenticated: boolean;
   email: any;
+  role: string,
 }
 export interface StateError {
   error: any;
@@ -22,6 +23,7 @@ export interface StateToken {
 export const INIT_STATE: StateManger = {
   isAuthenticated: null,
   email: null,
+  role: null,
 };
 
 export const INIT_STATE_ERROR: StateError = {
@@ -35,9 +37,9 @@ export const INIT_STATE_TOKEN: StateToken = {
 export const reducer = createReducer(
   INIT_STATE,
   // on(authLogInManagerRequest, (state) => { return state }),
-  on(action.authGetCurrentManagerSuccess, (state, action) => ({ ...state, isAuthenticated: true, email: action.email })),
-  on(action.authLogInManagerSuccess, (state, action) => ({ ...state, email: action.payload.email })),
-  on(action.authVerifyManagerSuccess, (state, action) => ({ ...state, isAuthenticated: true, email: action.payload.email })),
+  on(action.authGetCurrentManagerSuccess, (state, action) => ({ ...state, isAuthenticated: true, email: action.email, role: action.role })), //  role: action.role
+  on(action.authLogInManagerSuccess, (state, action) => ({ ...state, email: action.payload.email, role: action.payload.role })),
+  on(action.authVerifyManagerSuccess, (state, action) => ({ ...state, isAuthenticated: true, email: action.payload.email, role: action.payload.role })),
   on(action.authLogInManagerError, (state, action) => INIT_STATE),
   on(action.authVerifyManagerError, (state, action) => INIT_STATE),
   on(action.authLogOutManagerError, (state, action) => INIT_STATE),

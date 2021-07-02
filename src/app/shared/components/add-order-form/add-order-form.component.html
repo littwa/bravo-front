@@ -1,0 +1,58 @@
+<app-modal-container  (btn)="submitFormCustomer()" title="Add Order" btnText=" + Add Order">
+
+  <form class="order-add" [formGroup]="form">
+    <p>Order No</p>
+    <mat-form-field appearance="outline">
+      <input formControlName="orderNo" matInput placeholder="Order No">
+    </mat-form-field>
+
+    <p>Customer ID</p>
+
+    <mat-form-field appearance="outline">
+
+      <mat-select>
+        <div class="inp"><input (keyup)="onKey($event.target.value)"></div>
+        <mat-option>None</mat-option>
+        <mat-option *ngFor="let state of selectedStates" [value]="state">{{state}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+
+    <mat-form-field appearance="outline">
+      <input formControlName="customerId" matInput placeholder="customerId">
+    </mat-form-field>
+
+    <p>Customer Name+</p>
+    <mat-form-field appearance="outline">
+      <input formControlName="customer" matInput placeholder="customer">
+    </mat-form-field>
+
+    <p>customerNo+</p>
+    <mat-form-field appearance="outline">
+      <input formControlName="customerNo" matInput placeholder="customerNo">
+    </mat-form-field>
+
+    <p>items</p>
+    <mat-form-field appearance="outline">
+      <input formControlName="items" matInput placeholder="items">
+    </mat-form-field>
+
+
+    <p>notes</p>
+    <mat-form-field appearance="outline">
+      <input formControlName="notes" matInput placeholder="notes">
+    </mat-form-field>
+
+    <p>status</p>
+    <mat-form-field appearance="outline">
+      <input formControlName="status" matInput placeholder="status">
+    </mat-form-field>
+
+    <p>productsList</p>
+    <mat-form-field appearance="outline">
+      <input formControlName="productsList" matInput placeholder="productsList">
+    </mat-form-field>
+
+  </form>
+
+</app-modal-container>

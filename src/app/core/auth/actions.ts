@@ -16,7 +16,7 @@ export const AUTH_GET_CURRENT_MANAGER_REQUEST = '[AUTH] Get-current manager Requ
 export const AUTH_GET_CURRENT_MANAGER_SUCCESS = '[AUTH] Get-current manager Success'
 export const AUTH_GET_CURRENT_MANAGER_ERROR = '[AUTH] Get-current manager Error'
 
-export const authLogInManagerRequest = createAction(AUTH_LOG_IN_MANAGER_REQUEST, props<{ email: any }>());
+export const authLogInManagerRequest = createAction(AUTH_LOG_IN_MANAGER_REQUEST, props<{ email: any, role: string }>());
 export const authLogInManagerSuccess = createAction(AUTH_LOG_IN_MANAGER_SUCCESS, props<{ payload: any }>());
 export const authLogInManagerError = createAction(AUTH_LOG_IN_MANAGER_ERROR, props<{ err: any }>());
 
@@ -29,5 +29,5 @@ export const authLogOutManagerSuccess = createAction(AUTH_LOG_OUT_MANAGER_SUCCES
 export const authLogOutManagerError = createAction(AUTH_LOG_OUT_MANAGER_ERROR, props<{ err: any }>());
 
 export const authGetCurrentManagerRequest = createAction(AUTH_GET_CURRENT_MANAGER_REQUEST);
-export const authGetCurrentManagerSuccess = createAction(AUTH_GET_CURRENT_MANAGER_SUCCESS, props<{ email: any, token: any }>());
+export const authGetCurrentManagerSuccess = createAction(AUTH_GET_CURRENT_MANAGER_SUCCESS, props<{ email: any, token: any, role: string }>());
 export const authGetCurrentManagerError = createAction(AUTH_GET_CURRENT_MANAGER_ERROR, props<{ err: any }>());

@@ -33,6 +33,7 @@ import { AddCustomerFormComponent } from './components/add-customer-form/add-cus
 import { EditCustomerFormComponent } from './components/edit-customer-form/edit-customer-form.component';
 import { EditProductFormComponent } from './components/edit-product-form/edit-product-form.component';
 import { AlertComponent } from './components/alert/alert.component';
+import { AddOrderFormComponent } from './components/add-order-form/add-order-form.component';
 
 
 @NgModule({
@@ -50,7 +51,8 @@ import { AlertComponent } from './components/alert/alert.component';
     AddCustomerFormComponent,
     EditCustomerFormComponent,
     EditProductFormComponent,
-    AlertComponent
+    AlertComponent,
+    AddOrderFormComponent
   ],
   imports: [
     CommonModule,

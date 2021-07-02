@@ -18,6 +18,9 @@ import { AuthSetTokenInterceptor } from './shared/interceptors/auth.interceptor'
 import { AuthGuard } from './shared/guards/auth.guard';
 
 
+
+
+
 const INTERCEPTOR_PROVIDER = {
   provide: HTTP_INTERCEPTORS,
   multi: true,
@@ -29,7 +32,7 @@ const INTERCEPTOR_PROVIDER = {
     AppComponent,
     MainLayoutComponent,
     MenuComponent,
-    DndDirective
+    DndDirective,
   ],
   imports: [
     BrowserModule,

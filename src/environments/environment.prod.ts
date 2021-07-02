@@ -1,4 +1,7 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://lit-wildwood-53168.herokuapp.com/'
+  apiUrl: 'http://localhost:3000/'
 };
+
+// 'http://localhost:3000/'
+//  apiUrl: 'https://lit-wildwood-53168.herokuapp.com/'

@@ -13,6 +13,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { MatAutocompleteSelectedEvent, MatAutocomplete } from '@angular/material/autocomplete';
 import { ordersGetAllAggregateRequest, ordersConfirmStatusRequest } from 'src/app/core/orders/actions';
 import { getLoading, getOrders } from 'src/app/core';
+import { AddOrderFormComponent } from 'src/app/shared/components/add-order-form/add-order-form.component'
 
 @Component({
   selector: 'app-order-page',
@@ -49,6 +50,7 @@ export class OrderPageComponent implements OnInit, OnDestroy {
     start: new FormControl(),
     end: new FormControl()
   });
+  AddOrderFormComponent = AddOrderFormComponent
 
   constructor(public activatedRoute: ActivatedRoute, private store: Store, private cdr: ChangeDetectorRef) { }
 

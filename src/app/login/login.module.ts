@@ -6,7 +6,8 @@ import { SharedModule } from '../shared/shared.module';
 
 const routes = [
   { path: '', component: LoginPageComponent },
-  { path: "verify", loadChildren: () => import("../check-email/check-email.module").then(m => m.CheckEmailModule) }
+  { path: "verify", loadChildren: () => import("../check-email/check-email.module").then(m => m.CheckEmailModule) },
+  { path: "register", loadChildren: () => import("../register/register.module").then(m => m.RegisterModule) }
 ]
 
 @NgModule({

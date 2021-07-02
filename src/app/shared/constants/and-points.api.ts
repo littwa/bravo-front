@@ -1,8 +1,11 @@
 export const AndPoint = {
   auth: {
-    logInManger: 'managers/log-in/',
-    verifyManger: 'managers/verify/',
-    getCurrentManger: 'managers/get/'
+    logInManger: 'users/register',
+    verifyManger: 'users/admin/verify/',
+    getCurrentManger: 'users/get'
+    // logInManger: 'managers/log-in/',
+    // verifyManger: 'managers/verify/',
+    // getCurrentManger: 'managers/get/'
   },
   orders: {
     getAllOrders: 'orders/',
@@ -22,3 +25,4 @@ export const AndPoint = {
     // delCustomers: 'customers/del/',
   }
 };
+// users/get

@@ -1,5 +1,9 @@
 <app-search-form [applyFilter]="applyFilter" placeholder="Order, Customer, Notes..."></app-search-form>
 
+<div class="btn-absolut-container">
+  <app-button-main [nameBtn]="'Add order'" [modalComponent]="AddOrderFormComponent"></app-button-main>
+</div>
+
 <div class="mat-elevation-z8 table--container">
   <table mat-table [dataSource]="dataSource" matSort multiTemplateDataRows>
 

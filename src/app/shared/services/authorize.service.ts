@@ -17,7 +17,6 @@ export class ManagerService {
   constructor(private http: HttpClient) { }
 
   public logInManger(manager: Manager): Observable<any> {
-
     return this.http.post<any>(`${this.urlApi}${AndPoint.auth.logInManger}`, manager)
   }
 
@@ -29,7 +28,6 @@ export class ManagerService {
     return this.http.get<any>(`${this.urlApi}${AndPoint.auth.getCurrentManger}`);
   }
 
-
   // public checkValidToken() {
 //   const token = localStorage.getItem(TOKEN);
 //   if (token) {
@@ -37,11 +35,5 @@ export class ManagerService {
 //   }
 //   return of(false);
 // }
-
-
-
-
-
-
 
 }
