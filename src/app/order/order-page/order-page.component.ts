@@ -12,7 +12,7 @@ import { COMMA, ENTER } from '@angular/cdk/keycodes';
 import { FormControl, FormGroup } from '@angular/forms';
 import { MatAutocompleteSelectedEvent, MatAutocomplete } from '@angular/material/autocomplete';
 import { ordersGetAllAggregateRequest, ordersConfirmStatusRequest } from 'src/app/core/orders/actions';
-import { getLoading, getOrders } from 'src/app/core';
+import { getLoading, getOrders, getRole } from 'src/app/core';
 import { AddOrderFormComponent } from 'src/app/shared/components/add-order-form/add-order-form.component'
 
 @Component({
@@ -50,8 +50,10 @@ export class OrderPageComponent implements OnInit, OnDestroy {
     start: new FormControl(),
     end: new FormControl()
   });
-  AddOrderFormComponent = AddOrderFormComponent
+  AddOrderFormComponent = AddOrderFormComponent;
 
+  statuses = ["canceled", "in progress", "deliverred", "completed"]; // "new",
+  role: Observable<string> = of("");
   constructor(public activatedRoute: ActivatedRoute, private store: Store, private cdr: ChangeDetectorRef) { }
 
   @ViewChild('formField') formField;
@@ -63,6 +65,9 @@ export class OrderPageComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.isLoading = this.store.select(getLoading).pipe(map(load => !load))
     this.dataSource = new MatTableDataSource([]);
+    console.log(this.role)
+    this.role = this.store.select(getRole).pipe(tap(r => r === "customer" ? this.statuses = ["canceled"] : this.statuses))
+
   }
 
   ngAfterViewInit() {
@@ -200,12 +205,19 @@ export class OrderPageComponent implements OnInit, OnDestroy {
 
   handleConfirmed(e, row): void {
     e.stopPropagation();
-    this.store.dispatch(ordersConfirmStatusRequest({ payload: row, id: row._id }))
+    // this.store.dispatch(ordersConfirmStatusRequest({ payload: row, id: row._id }))
+  }
+
+  handleChangeStatus($event, row, status) {
+    console.log($event, row, status)
+    this.store.dispatch(ordersConfirmStatusRequest({ payload: { status }, id: row._id }))
   }
 
   ngOnDestroy(): void {
     this.unsub$.next(null)
     this.unsub$.complete()
   }
+
+
 
 }

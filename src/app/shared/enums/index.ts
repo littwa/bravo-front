@@ -3,3 +3,8 @@ export enum AvailabilityProduct {
   outOfStock = "Out of stock",
   discontinued = "Discontinued"
 }
+
+export enum ERole {
+  Admin = "admin",
+  Customer = "customer"
+}

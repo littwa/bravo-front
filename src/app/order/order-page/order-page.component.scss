@@ -39,11 +39,7 @@ table {
   display: none;
 }
 
-.confirmed-txt {
-  padding-left: 6px;
-  color: #1F8B24;
-  font-weight: 500;
-}
+
 
 
 .example-chip-list{
@@ -105,6 +101,34 @@ table th {
 .container-paginator {
   margin: 10px;
   background-color: #fafafa;
+}
+
+.confirmed-txt {
+  padding-left: 6px;
+  // color: #1F8B24;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.menu-status{
+  display: inline-block;
+}
+
+.canceled{
+  color: #adadad;
+}
+
+.new {
+  color: #4a89ff;
+}
+.in-progress {
+  color: blueviolet;
+}
+.deliverred {
+  color:  #000;
+}
+.completed {
+  color: green
 }
 
 ::ng-deep {

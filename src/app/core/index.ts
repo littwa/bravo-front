@@ -27,3 +27,5 @@ export const getAuthToken = createSelector(getAuthState, authReducers.getAuthTok
 export const getErrorAuth = createSelector(getAuthState, authReducers.getAuthError)
 export const getLoading = createSelector(getLoadingState, loadingReducers.getLoading)
 export const getNotify = createSelector(getNotifyState, notifyReducers.getNotify)
+export const getRole = createSelector(getAuthState, authReducers.getUserRole)
+

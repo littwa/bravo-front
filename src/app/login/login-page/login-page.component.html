@@ -80,8 +80,8 @@
           </mat-icon>
         </mat-form-field>
 
-        <p>Enter the email you signed up with<br>
-          to receive your login code</p>
+        <p>Enter the email and password<br>
+          to sign in app or  <a routerLink="/register">register now</a></p>
       <mat-dialog-actions align="end">
         <button (click)="handleClickCustomer()" mat-raised-button [disabled]="emailCustomer.invalid || !emailCustomer.value || passwordCustomer.invalid || !passwordCustomer.value" color="primary" cdkFocusInitial>Log
           In </button>

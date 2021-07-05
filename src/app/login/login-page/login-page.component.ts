@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { Store } from '@ngrx/store';
-import { authLogInManagerRequest } from 'src/app/core/auth/actions';
+import { authLogInManagerRequest, authSignInCustomerRequest } from 'src/app/core/auth/actions';
 
 enum EStatusInput {
   valid = "valid-input-email",
@@ -92,6 +92,8 @@ export class LoginPageComponent implements OnInit {
       password: this.valueInputPasswordCustomer,
       role: "customer"
     })
+
+    this.store.dispatch(authSignInCustomerRequest({ email: this.valueInputEmailCustomer, password: this.valueInputPasswordCustomer, role: "customer" }))
   }
 
   //===================

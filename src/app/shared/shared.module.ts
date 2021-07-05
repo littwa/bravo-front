@@ -16,13 +16,14 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSortModule } from '@angular/material/sort';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatMenuModule } from '@angular/material/menu';
 import { SearchFormComponent } from './components/search-form/search-form.component';
 import { CdkTableModule } from '@angular/cdk/table';
 import { ExpandedTableComponent } from './components/expanded-table/expanded-table.component';
 import { StylePaginatorDirective } from './directives/style-paginator.directive';
 import { DeleteModalComponent } from './components/delete-modal/delete-modal.component';
-import { MatDialogModule } from '@angular/material/dialog';
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { ModalContainerComponent } from './components/modal-container/modal-container.component';
 import { AddProductFormComponent } from './components/add-product-form/add-product-form.component';
 import { ReplaceCatalogComponent } from './components/replace-catalog/replace-catalog.component';
@@ -34,6 +35,8 @@ import { EditCustomerFormComponent } from './components/edit-customer-form/edit-
 import { EditProductFormComponent } from './components/edit-product-form/edit-product-form.component';
 import { AlertComponent } from './components/alert/alert.component';
 import { AddOrderFormComponent } from './components/add-order-form/add-order-form.component';
+import { SplitStrPipe } from './pipes/split-str.pipe';
+import { FilterStatusesPipe } from './pipes/filter-statuses.pipe';
 
 
 @NgModule({
@@ -52,7 +55,9 @@ import { AddOrderFormComponent } from './components/add-order-form/add-order-for
     EditCustomerFormComponent,
     EditProductFormComponent,
     AlertComponent,
-    AddOrderFormComponent
+    AddOrderFormComponent,
+    SplitStrPipe,
+    FilterStatusesPipe,
   ],
   imports: [
     CommonModule,
@@ -76,6 +81,7 @@ import { AddOrderFormComponent } from './components/add-order-form/add-order-for
     MatAutocompleteModule,
     MatDialogModule,
     MatProgressSpinnerModule,
+    MatMenuModule,
   ],
   exports: [
     CommonModule,
@@ -112,6 +118,9 @@ import { AddOrderFormComponent } from './components/add-order-form/add-order-for
     EditCustomerFormComponent,
     EditProductFormComponent,
     AlertComponent,
+    MatMenuModule,
+    SplitStrPipe,
+    FilterStatusesPipe,
   ],
   providers: [],
 })

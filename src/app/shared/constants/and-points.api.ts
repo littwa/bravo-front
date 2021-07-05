@@ -2,7 +2,9 @@ export const AndPoint = {
   auth: {
     logInManger: 'users/register',
     verifyManger: 'users/admin/verify/',
-    getCurrentManger: 'users/get'
+    getCurrentManger: 'users/get',
+    verifyCustomer: 'users/customer/verify/',
+    signInCustomer: 'users/sign-in'
     // logInManger: 'managers/log-in/',
     // verifyManger: 'managers/verify/',
     // getCurrentManger: 'managers/get/'

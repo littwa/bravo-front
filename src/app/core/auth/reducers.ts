@@ -5,6 +5,7 @@ export interface StateAuth {
   manager: StateManger,
   token: string,
   error: any,
+  role: string,
 }
 
 export interface StateManger {
@@ -62,6 +63,7 @@ export const reducerToken = createReducer(
   INIT_STATE_TOKEN,
   on(action.authGetCurrentManagerSuccess, (state, action) => ({ token: action.token })),
   on(action.authVerifyManagerSuccess, (state, action) => ({ token: action.payload.token })),
+  on(action.authSignInCustomerSuccess, (state, action) => action.payload.token),  // authSignInCustomerSuccess
   on(action.authVerifyManagerError, (state, action) => INIT_STATE_TOKEN),
   on(action.authLogOutManagerSuccess, (state, action) => INIT_STATE_TOKEN),
 )
@@ -77,3 +79,4 @@ export const getIsAuth = (state: StateAuth): boolean => state.manager.isAuthenti
 export const getEmailManager = (state: StateAuth): boolean => state.manager.email;
 export const getAuthToken = (state: StateAuth): string => state.token;
 export const getAuthError = (state: StateAuth): any => state.error.error;
+export const getUserRole = (state: StateAuth): any => state.manager.role;

@@ -3,8 +3,9 @@ import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { getEmailManager, getErrorAuth, getLoading } from 'src/app/core';
-import { authVerifyManagerRequest } from 'src/app/core/auth/actions';
+import { getEmailManager, getErrorAuth, getLoading, getRole } from 'src/app/core';
+import { authVerifyCustomerRequest, authVerifyManagerRequest } from 'src/app/core/auth/actions';
+import { ERole } from 'src/app/shared/enums';
 
 
 @Component({
@@ -14,14 +15,15 @@ import { authVerifyManagerRequest } from 'src/app/core/auth/actions';
 })
 export class CheckEmailPageComponent implements OnInit {
 
-  isInvalid = false
-  isLoading = false
-  statusInputCheck
-  valueInputEmail: string = ""
-  valueInputEmail2: string = ""
+  isInvalid = false;
+  isLoading = false;
+  statusInputCheck;
+  valueInputEmail: string = "";
+  valueInputEmail2: string = "";
   emailManger$: Observable<any>
-  loading$: Observable<any>
-  error$: Observable<any>
+  loading$: Observable<any>;
+  error$: Observable<any>;
+  role: string;
 
   @ViewChild("modalCheck") modalCheck
   @ViewChild("inp2") inp2
@@ -32,6 +34,7 @@ export class CheckEmailPageComponent implements OnInit {
     this.emailManger$ = this.store.select(getEmailManager)
     this.loading$ = this.store.select(getLoading).pipe(map(v => !!v))
     this.error$ = this.store.select(getErrorAuth).pipe(map(v => !!v))
+    this.store.select(getRole).subscribe(v => this.role = v)
     // .subscribe(v => console.log(!!v))
   }
 
@@ -52,8 +55,15 @@ export class CheckEmailPageComponent implements OnInit {
   }
 
   verifyRequest(input1, input2) {
-    console.log("result:", input1 + input2)
-    this.store.dispatch(authVerifyManagerRequest({ payload: (input1 + input2) }))
+    console.log("result:", this.role)
+
+    // this.store.dispatch(authVerifyCustomerRequest({ payload: (input1 + input2) }))
+
+    if (this.role === ERole.Customer) return this.store.dispatch(authVerifyCustomerRequest({ payload: (input1 + input2) }))
+    if (this.role === ERole.Admin) return this.store.dispatch(authVerifyManagerRequest({ payload: (input1 + input2) }))
+
+    //this.store.dispatch(authVerifyCustomerRequest({ payload: (input1 + input2) }))
+   //  this.store.dispatch(authVerifyManagerRequest({ payload: (input1 + input2) }))
   }
 
 }

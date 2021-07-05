@@ -20,8 +20,16 @@ export class ManagerService {
     return this.http.post<any>(`${this.urlApi}${AndPoint.auth.logInManger}`, manager)
   }
 
+  public signInManger(manager: Manager): Observable<any> {
+    return this.http.post<any>(`${this.urlApi}${AndPoint.auth.signInCustomer}`, manager)
+  }
+
   public verifyManger(code: string): Observable<any> {
     return this.http.get<any>(`${this.urlApi}${AndPoint.auth.verifyManger}${code}`)
+  }
+
+  public verifyCustomer(code: string): Observable<any> {
+    return this.http.get<any>(`${this.urlApi}${AndPoint.auth.verifyCustomer}${code}`)
   }
 
   public getCurrentManger(): Observable<any> {
