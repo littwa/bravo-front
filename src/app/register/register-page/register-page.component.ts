@@ -30,21 +30,13 @@ enum EStatusInputField {
 })
 export class RegisterPageComponent implements OnInit {
 
-  form: FormGroup
-
-
-
-  allCustomers
-  // = [{ q: 1 }, { q: 2 }]
-
+  form: FormGroup;
+  allCustomers: object[];
   valueInputEmailCustomer = '';
   valueInputPasswordCustomer = '';
   valueInputEmail = '';
-
-
   EStatusInput = EStatusInput;
   EStatusInputField = EStatusInputField;
-
   statusInput = EStatusInput.default;
   statusInputCustomerPassword = EStatusInputField.default;
   statusInputCustomerEmail = EStatusInputField.default;

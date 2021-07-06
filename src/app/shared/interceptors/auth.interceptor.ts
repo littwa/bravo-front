@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpRequest, HttpHandler, HttpEvent, HttpInterceptor, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 
-import { TOKEN_LOCAL_STORAGE_KEY } from 'src/app/shared/constants';
+import { TOKEN_LOCAL_STORAGE_KEY_ACCESS } from 'src/app/shared/constants';
 import { catchError, tap } from 'rxjs/operators';
 import { Router } from '@angular/router';
 
@@ -12,12 +12,12 @@ export class AuthSetTokenInterceptor implements HttpInterceptor {
   constructor(private router: Router) { }
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    const token = localStorage.getItem(TOKEN_LOCAL_STORAGE_KEY);
+    const accessToken = localStorage.getItem(TOKEN_LOCAL_STORAGE_KEY_ACCESS);
 
-    if (token) {
+    if (accessToken) {
       request = request.clone({
         setHeaders: {
-          Authorization: `Bearer ${token}`
+          Authorization: `Bearer ${accessToken}`
         }
       });
     }

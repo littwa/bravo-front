@@ -1,7 +1,7 @@
 <app-search-form [applyFilter]="applyFilter" placeholder="Order, Customer, Notes..."></app-search-form>
 
 <div class="btn-absolut-container">
-  <app-button-main [nameBtn]="'Add order'" [modalComponent]="AddOrderFormComponent"></app-button-main>
+  <app-button-main [nameBtn]="'Add Order'" [modalComponent]="AddOrderFormComponent"></app-button-main>
 </div>
 
 <div class="mat-elevation-z8 table--container">
@@ -45,7 +45,7 @@
             <mat-chip-list class="list-chip" #chipList>
               <mat-chip class="mat-chip" *ngFor="let fruit of items" [selectable]="selectable" [removable]="removable"
                 (removed)="remove(fruit)">
-                {{fruit}}
+                {{ fruit }}
                 <mat-icon class="mat-icon" matChipRemove *ngIf="removable">
                   <svg class="svg-icon" width="12" height="12" viewBox="0 0 16 16" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
@@ -63,7 +63,7 @@
 
             <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selectedCH($event)">
               <mat-option *ngFor="let item of filteredItems | async" [value]="item">
-                {{item}}
+                {{ item }}
               </mat-option>
             </mat-autocomplete>
 

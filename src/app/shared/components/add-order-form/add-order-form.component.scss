@@ -40,9 +40,27 @@ padding: 0;
 }
 
 
+
+
 ::ng-deep {
+  .order-add .mat-form-field {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 4px;
+  }
+
+  .disabled-input .mat-form-field-flex{
+    background-color: #e9e9e9;
+    border-radius: 4px;
+    // height: max-content;
+
+  }
+  // .order-add .disabled-input .mat-form-field-infix{
+
+  // }
 
   .order-add .mat-form-field-wrapper {
+    margin-top: 0;
     padding-bottom: 6px;
   }
 
@@ -54,9 +72,7 @@ padding: 0;
   margin-top: 3px;
   }
 
-  .order-add .mat-form-field-infix {
-    width: 100%;
-  }
+
 
   .order-add .mat-form-field {
     width: 100%;

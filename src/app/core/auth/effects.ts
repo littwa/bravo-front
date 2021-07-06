@@ -6,7 +6,7 @@ import { catchError, map, switchMap, tap } from "rxjs/operators";
 import { ManagerService } from "src/app/shared/services/authorize.service"
 import * as action from "./actions"
 import { Router } from "@angular/router"
-import { TOKEN_LOCAL_STORAGE_KEY } from "src/app/shared/constants";
+import { TOKEN_LOCAL_STORAGE_KEY_ACCESS, TOKEN_LOCAL_STORAGE_KEY_REFRESH } from "src/app/shared/constants";
 
 @Injectable()
 export class ManegerEffects {
@@ -26,22 +26,18 @@ export class ManegerEffects {
     ofType(action.AUTH_SIGN_IN_CUSTOMER_REQUEST),
     switchMap((props) => this.managerService.signInManger(props).pipe(
       map(data => action.authSignInCustomerSuccess({ payload: data })),
-      tap((data) => { this.setMangerTokenLocalStorage(data.payload.token); this.router.navigate(['/']) }),
+      tap((data) => { this.setMangerTokenLocalStorage(data.payload.tokens); this.router.navigate(['/']) }),
       catchError((err: any) => of(action.authLogInManagerError({ err: err.message })))
     ))
   ))
 
-  verifyManger$ = createEffect(() => this.actions$.pipe(
+  verifyAdmin$ = createEffect(() => this.actions$.pipe(
     ofType(action.AUTH_VERIFY_MANAGER_REQUEST),
-    switchMap(
-      (props: any) => {
-        console.log(444, props); return this.managerService.verifyManger(props.payload).pipe(
+    switchMap((props: any) => this.managerService.verifyManger(props.payload).pipe(
       map(data => action.authVerifyManagerSuccess({ payload: data })),
-          tap((data: any) => { this.setMangerTokenLocalStorage(data.payload.token); this.router.navigate(['/']) }), // /login'
+      tap((data: any) => { this.setAdminTokenLocalStorage(data.payload.token); this.router.navigate(['/order']) }), //login'
       catchError((err: any) => of(action.authVerifyManagerError({ err: err.message })))
-        )
-      }
-    )
+    ))
   ))
 
   verifyCustomer$ = createEffect(() => this.actions$.pipe(
@@ -64,14 +60,22 @@ export class ManegerEffects {
     catchError((err: any) => of(action.authLogOutManagerError({ err: err.message })))
   ))
 
-  private setMangerTokenLocalStorage(token): void {
+  private setMangerTokenLocalStorage(tokens): void {
+    if (tokens) {
+      localStorage.setItem(TOKEN_LOCAL_STORAGE_KEY_ACCESS, tokens.accessToken);
+      localStorage.setItem(TOKEN_LOCAL_STORAGE_KEY_REFRESH, tokens.refreshToken);
+    }
+  }
+
+  private setAdminTokenLocalStorage(token): void {
     if (token) {
-      localStorage.setItem(TOKEN_LOCAL_STORAGE_KEY, token);
+      localStorage.setItem(TOKEN_LOCAL_STORAGE_KEY_ACCESS, token);
+
     }
   }
 
   private clearMangerTokenLocalStorage(): void {
-    localStorage.removeItem(TOKEN_LOCAL_STORAGE_KEY);
+    localStorage.clear();
   }
 
 }

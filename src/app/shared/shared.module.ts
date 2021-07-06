@@ -37,6 +37,7 @@ import { AlertComponent } from './components/alert/alert.component';
 import { AddOrderFormComponent } from './components/add-order-form/add-order-form.component';
 import { SplitStrPipe } from './pipes/split-str.pipe';
 import { FilterStatusesPipe } from './pipes/filter-statuses.pipe';
+import { ChipsAddProductComponent } from './components/chips-add-product/chips-add-product.component';
 
 
 @NgModule({
@@ -58,6 +59,7 @@ import { FilterStatusesPipe } from './pipes/filter-statuses.pipe';
     AddOrderFormComponent,
     SplitStrPipe,
     FilterStatusesPipe,
+    ChipsAddProductComponent,
   ],
   imports: [
     CommonModule,

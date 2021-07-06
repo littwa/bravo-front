@@ -29,9 +29,9 @@ import { AddOrderFormComponent } from 'src/app/shared/components/add-order-form/
 })
 export class OrderPageComponent implements OnInit, OnDestroy {
   isLoading: Observable<boolean> = of(true);
-  visible = true;
-  selectable = true;
-  removable = true;
+  visible: boolean = true;
+  selectable: boolean = true;
+  removable: boolean = true;
   separatorKeysCodes: number[] = [ENTER, COMMA];
   itemsCtrl = new FormControl();
   filteredItems: Observable<string[]>;
@@ -40,21 +40,20 @@ export class OrderPageComponent implements OnInit, OnDestroy {
   expandedElement: any
   dataSource: MatTableDataSource<any>;
   displayedColumns = ['select', "orderNo", "customer", "customerNo", "items", "notes", "ordered", "reqDelivery", "status"];
-  name = "Orders";
+  name: string = "Orders";
   initialSelection = [];
   allowMultiSelect = true;
   selection = new SelectionModel<any>(this.allowMultiSelect, this.initialSelection);
   visibility: boolean = true;
   private unsub$ = new Subject<void>();
+  AddOrderFormComponent = AddOrderFormComponent;
+  statuses = ["canceled", "in progress", "deliverred", "completed"]; // "new",
+  role: Observable<string> = of("");
   range = new FormGroup({
     start: new FormControl(),
     end: new FormControl()
   });
-  AddOrderFormComponent = AddOrderFormComponent;
 
-  statuses = ["canceled", "in progress", "deliverred", "completed"]; // "new",
-  role: Observable<string> = of("");
-  constructor(public activatedRoute: ActivatedRoute, private store: Store, private cdr: ChangeDetectorRef) { }
 
   @ViewChild('formField') formField;
   @ViewChild('itemInput') itemInput: ElementRef<HTMLInputElement>;
@@ -62,12 +61,13 @@ export class OrderPageComponent implements OnInit, OnDestroy {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
+  constructor(public activatedRoute: ActivatedRoute, private store: Store, private cdr: ChangeDetectorRef) { }
+
   ngOnInit(): void {
     this.isLoading = this.store.select(getLoading).pipe(map(load => !load))
     this.dataSource = new MatTableDataSource([]);
     console.log(this.role)
     this.role = this.store.select(getRole).pipe(tap(r => r === "customer" ? this.statuses = ["canceled"] : this.statuses))
-
   }
 
   ngAfterViewInit() {
@@ -217,7 +217,5 @@ export class OrderPageComponent implements OnInit, OnDestroy {
     this.unsub$.next(null)
     this.unsub$.complete()
   }
-
-
 
 }

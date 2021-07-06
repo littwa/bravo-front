@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
+import { getCustomers } from 'src/app/core';
+import { catalogGetAllRequest } from 'src/app/core/catalog/actions';
+import { customersGetAllRequest } from 'src/app/core/customers/actions';
 
 @Component({
   selector: 'app-add-order-form',
@@ -10,54 +13,59 @@ import { Store } from '@ngrx/store';
 export class AddOrderFormComponent implements OnInit {
 
   form: FormGroup
+  allCustomers = [];
+  selectedCustomers = []
 
   constructor(public formBuilder: FormBuilder, public store: Store) { }
 
   ngOnInit(): void {
+
+    this.store.dispatch(customersGetAllRequest())
+
+    this.store.select(getCustomers).pipe().subscribe(customers => {
+      this.allCustomers = this.selectedCustomers = customers
+    })
+
     this.form = new FormGroup({
       orderNo: new FormControl(""),
-      customerId: new FormControl(""), //select, ID
       customer: new FormControl(""),
+      customerId: new FormControl(""), //select, ID
       customerNo: new FormControl(""),
       items: new FormControl(""),
       notes: new FormControl(""),
-      status: new FormControl(""),
+      status: new FormControl("new"),
       productsList: new FormControl(""), // Array of string(ID)
       ordered: new FormControl({}), // Date
       reqDelivery: new FormControl({}), // Date
     })
   }
 
-  submitFormCustomer() {
-    console.log("submitFormAddOrder", this.form.value)
+  submitFormCreateOrder() {
+    // console.log("submitFormAddOrder", this.form.value)
+    const dtoCreatOrder = { ...this.form.value, customerId: this.form.value.customerId._id }
+    console.log(dtoCreatOrder)
     // this.store.dispatch(customersAddRequest(this.form.value))
   }
 
-
-
-
-  states: string[] = [
-    'Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware',
-    'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky',
-    'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi',
-    'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico',
-    'New York', 'North Carolina', 'North Dakota', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania',
-    'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont',
-    'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
-  ];
-
-  // Initially fill the selectedStates so it can be used in the for loop**
-  selectedStates = this.states;
-
-  // Receive user input and send to search method**
   onKey(value) {
-    this.selectedStates = this.search(value);
+    this.selectedCustomers = this.search(value);
   }
 
-  // Filter the states list and send back to populate the selectedStates**
   search(value: string) {
-    let filter = value.toLowerCase();
-    return this.states.filter(option => option.toLowerCase().startsWith(filter));
+    let filterStr = value.toLowerCase().trim();
+    if (!filterStr) return this.selectedCustomers = this.allCustomers
+    return this.allCustomers.filter(customer => customer.name.toLowerCase().includes(filterStr));
+  }
+
+  sel(event$) {
+    console.log(event$)
+    this.form.patchValue({ customer: event$.value.name, customerNo: event$.value.customerNo }); // customerId: event$.value._id
+    console.log(this.form)
+  }
+
+  arrProductId(e) {
+    this.form.patchValue({ productsList: e })
+    console.log(111, e)
   }
 
 }

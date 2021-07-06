@@ -45,5 +45,5 @@ export const authLogOutManagerSuccess = createAction(AUTH_LOG_OUT_MANAGER_SUCCES
 export const authLogOutManagerError = createAction(AUTH_LOG_OUT_MANAGER_ERROR, props<{ err: any }>());
 
 export const authGetCurrentManagerRequest = createAction(AUTH_GET_CURRENT_MANAGER_REQUEST);
-export const authGetCurrentManagerSuccess = createAction(AUTH_GET_CURRENT_MANAGER_SUCCESS, props<{ email: any, token: any, role: string }>());
+export const authGetCurrentManagerSuccess = createAction(AUTH_GET_CURRENT_MANAGER_SUCCESS, props<{ email: any, tokens: any, role: string }>());
 export const authGetCurrentManagerError = createAction(AUTH_GET_CURRENT_MANAGER_ERROR, props<{ err: any }>());
