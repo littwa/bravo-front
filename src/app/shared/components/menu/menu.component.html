@@ -14,12 +14,13 @@
       <li [routerLink]="['catalog']" routerLinkActive="activelink">
         Catalog
       </li>
-      <li [routerLink]="['customers']" routerLinkActive="activelink">
+      <li class="role-guard" [routerLink]="['customers']" routerLinkActive="activelink">
         Customers
       </li>
       <li [routerLink]="['login']" (click)="handleClick()">
         Log Out
       </li>
+
     </ul>
   </mat-sidenav>
   <mat-sidenav-content class="sidenav-content-width">

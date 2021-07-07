@@ -12,7 +12,9 @@ export const AndPoint = {
   orders: {
     getAllOrders: 'orders/',
     getAllOrdersAggregate: 'orders/aggregate/',
-    confirmOrderStatus: 'orders/confirmed/'
+    confirmOrderStatus: 'orders/confirmed/',
+    addOrder: 'orders/add',
+    updateOrder: 'orders/update/'
   },
   catalog: {
     getAllProducts: 'products/',
@@ -28,3 +30,4 @@ export const AndPoint = {
   }
 };
 // users/get
+// orders/update/:orderId

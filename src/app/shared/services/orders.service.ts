@@ -25,4 +25,12 @@ export class OrdersService {
     return this.http.patch<any>(`${this.urlApi}${AndPoint.orders.confirmOrderStatus}${order.id}`, order.payload)
   }
 
+  public addOrder(order): Observable<any> {
+    return this.http.post<any>(`${this.urlApi}${AndPoint.orders.addOrder}`, order)
+  }
+
+  public updateOrder(order): Observable<any> {
+    return this.http.patch<any>(`${this.urlApi}${AndPoint.orders.updateOrder}${order.id}`, order.payload)
+  }
 }
+

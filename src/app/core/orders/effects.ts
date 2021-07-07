@@ -37,25 +37,25 @@ export class OrdersEffects {
     })
   ))
 
-  // addOrder$ = createEffect(() => this.actions$.pipe(
-  //   ofType(action.ordERS_ADD_REQUEST),
-  //   switchMap((props) => {
-  //     console.log("props-add-", props); return this.ordersService.addorder(props).pipe(
-  //       map(data => action.ordersAddSuccess({ payload: data })),
-  //       catchError((err: any) => of(action.ordersAddError({ err: err.message })))
-  //     )
-  //   })
-  // ))
+  addOrder$ = createEffect(() => this.actions$.pipe(
+    ofType(action.ORDERS_ADD_REQUEST),
+    switchMap((props) => {
+      console.log("props-add-", props); return this.ordersService.addOrder(props).pipe(
+        map(data => action.ordersAddSuccess({ payload: data })),
+        catchError((err: any) => of(action.ordersAddError({ err: err.message })))
+      )
+    })
+  ))
 
-  // updateOrder$ = createEffect(() => this.actions$.pipe(
-  //   ofType(action.ordERS_EDIT_REQUEST),
-  //   switchMap((props) => {
-  //     console.log("props-update-", props); return this.ordersService.updateorder(props).pipe(
-  //       map(data => action.ordersEditSuccess({ payload: data })),
-  //       catchError((err: any) => of(action.ordersEditError({ err: err.message })))
-  //     )
-  //   })
-  // ))
+  updateOrder$ = createEffect(() => this.actions$.pipe(
+    ofType(action.ORDERS_EDIT_REQUEST),
+    switchMap((props) => {
+      console.log("props-update-", props); return this.ordersService.updateOrder(props).pipe(
+        map(data => action.ordersEditSuccess({ payload: data })),
+        catchError((err: any) => of(action.ordersEditError({ err: err.message })))
+      )
+    })
+  ))
 
   // delOrder$ = createEffect(() => this.actions$.pipe(
   //   ofType(action.CATALOG_DEL_REQUEST),

@@ -12,13 +12,13 @@ export const ORDERS_CONFIRM_STATUS_REQUEST = "[ORDERS] Confirm requsest"
 export const ORDERS_CONFIRM_SUCCESS = "[ORDERS] Confirm success"
 export const ORDERS_CONFIRM_ERROR = "[ORDERS] Confirm error"
 
-// export const ORDERS_ADD_REQUEST = "[ORDERS] Add requsest"
-// export const ORDERS_ADD_SUCCESS = "[ORDERS] Add success"
-// export const ORDERS_ADD_ERROR = "[ORDERS] Add error"
+export const ORDERS_ADD_REQUEST = "[ORDERS] Add requsest"
+export const ORDERS_ADD_SUCCESS = "[ORDERS] Add success"
+export const ORDERS_ADD_ERROR = "[ORDERS] Add error"
 
-// export const ORDERS_EDIT_REQUEST = "[ORDERS] Edit requsest"
-// export const ORDERS_EDIT_SUCCESS = "[ORDERS] Edit success"
-// export const ORDERS_EDIT_ERROR = "[ORDERS] Edit error"
+export const ORDERS_EDIT_REQUEST = "[ORDERS] Edit requsest"
+export const ORDERS_EDIT_SUCCESS = "[ORDERS] Edit success"
+export const ORDERS_EDIT_ERROR = "[ORDERS] Edit error"
 
 // export const ORDERS_DEL_REQUEST = "[ORDERS] Del requsest"
 // export const ORDERS_DEL_SUCCESS = "[ORDERS] Del success"
@@ -36,13 +36,13 @@ export const ordersConfirmStatusRequest = createAction(ORDERS_CONFIRM_STATUS_REQ
 export const ordersConfirmStatusSuccess = createAction(ORDERS_CONFIRM_SUCCESS, props<{ payload: any }>());
 export const ordersConfirmStatusError = createAction(ORDERS_CONFIRM_ERROR, props<{ err: any }>()); //(error: any) => (error)
 
-// export const ordersAddRequest = createAction(ORDERS_ADD_REQUEST, props<{ payload: any }>());
-// export const ordersAddSuccess = createAction(ORDERS_ADD_SUCCESS, props<{ payload: any }>());
-// export const ordersAddError = createAction(ORDERS_ADD_ERROR, props<{ err: any }>());
+export const ordersAddRequest = createAction(ORDERS_ADD_REQUEST, props<{ payload: any }>());
+export const ordersAddSuccess = createAction(ORDERS_ADD_SUCCESS, props<{ payload: any }>());
+export const ordersAddError = createAction(ORDERS_ADD_ERROR, props<{ err: any }>());
 
-// export const ordersEditRequest = createAction(ORDERS_EDIT_REQUEST, props<{ payload: any, id: string }>()); // , (payload, id) => ({ payload, id })
-// export const ordersEditSuccess = createAction(ORDERS_EDIT_SUCCESS, props<{ payload: any }>());
-// export const ordersEditError = createAction(ORDERS_EDIT_ERROR, props<{ err: any }>()); //(error: any) => (error)
+export const ordersEditRequest = createAction(ORDERS_EDIT_REQUEST, props<{ payload: any, id: string }>()); // , (payload, id) => ({ payload, id })
+export const ordersEditSuccess = createAction(ORDERS_EDIT_SUCCESS, props<{ payload: any }>());
+export const ordersEditError = createAction(ORDERS_EDIT_ERROR, props<{ err: any }>()); //(error: any) => (error)
 
 
 // export const ordersDelRequest = createAction(ORDERS_DEL_REQUEST, props<{ id: any }>());

@@ -26,8 +26,6 @@
   background:#fff;
   border-radius: 5px;
   border: 1px solid #bbbbbb;
-  // margin: 15vh auto ;
-  // padding: 20px 30px;
 }
 
 .log-in-title {
@@ -66,42 +64,7 @@ color: blue;
   height: 60px;
 }
 
-
-
 ::ng-deep {
-
-
-
-  //  .container-register .mat-form-field.ng-invalid.ng-touched .mat-form-field-outline {
-  //   color: rgb(245, 8, 8);
-  //  }
-
-  //  .container-register .mat-form-field.ng-dirty .mat-form-field-outline {
-  //   color: #1100fc;
-  //  }
-
-
-  // .container-register .mat-form-field.ng-pristine.ng-untouched.mat-focused .mat-form-field-outline {
-  //   color: #757575;
-  //  }
-  //  .container-register .mat-form-field.ng-untouched.mat-focused .mat-form-field-outline {
-  //   color: #757575;
-  //  }
-
-  //  .container-register .mat-form-field.mat-focused.ng-valid.ng-dirty .mat-form-field-outline {
-  //   color: green;
-  //  }
-
-  // .container-register .mat-form-field-appearance-outline .mat-form-field-outline {
-  //   color: #bbbbbb;
-  // }
-  // .container-register .mat-form-field-appearance-outline .mat-form-field-outline-thick {
-  //   color: #bbbbbb;
-  // }
-
-  // .container-register .mat-dialog-actions .reg-btn {
-  //   padding-bottom: 40px;
-  // }
 
   .container-register .mat-form-field-wrapper{
     padding-bottom: 5px;
@@ -120,10 +83,6 @@ color: blue;
     min-height: 40px;
   }
 
-  // .container-register .mat-dialog-actions {
-  //   // padding-bottom: 50px;
-  // }
-
   .container-register .mat-dialog-actions button {
     width: 400px;
   }
@@ -132,9 +91,9 @@ color: blue;
     .container-register .mat-dialog-actions button {
       width: 200px;
     }
+
     .container-register .mat-form-field-wrapper {
       width: 200px;
-
     }
   }
 

@@ -1,6 +1,6 @@
-<app-modal-container  (btn)="submitFormCreateOrder()" title="Add Order" btnText=" + Add Order">
+<app-modal-container  (btn)="submitFormEditOrder()" title="Edit Order" btnText=" Edit Order">
 
-  <form class="order-add" [formGroup]="form">
+  <form class="order-edit" [formGroup]="form">
     <p>Order No</p>
     <mat-form-field appearance="outline">
       <input formControlName="orderNo" matInput placeholder="Order No">
@@ -10,7 +10,7 @@
     <mat-form-field appearance="outline">
       <mat-select (selectionChange)="sel($event)" formControlName="customerId">
         <div class="inp"><input (keyup)="onKey($event.target.value)"></div>
-        <mat-option disabled value="">Choose Customer</mat-option>
+        <mat-option disabled [value]="rowData.customerId">Change Customer</mat-option>
         <mat-option *ngFor="let state of selectedCustomers" [value]="state">{{ state.name }}</mat-option>
       </mat-select>
     </mat-form-field>
@@ -37,7 +37,7 @@
     </mat-form-field>
 
     <p>Products List</p>
-    <app-chips-add-product (arrProductIdChanged)="arrProductId($event)"></app-chips-add-product>
+    <app-chips-add-product [initialProductList]="rowData.productsList" (arrProductIdChanged)="arrProductId($event)"></app-chips-add-product>
 
     <p>Date Required Delivery</p>
     <mat-form-field appearance="outline">

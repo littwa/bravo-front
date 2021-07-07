@@ -1,0 +1,82 @@
+.inp {
+  border: 1px solid #000;
+ padding-left: 10px;
+ }
+
+ .inp input {
+   width:400px;
+   height: 30px;
+   padding: 0;
+   border: none;
+ }
+
+ .order-edit {
+   margin-bottom: 30px;
+ }
+
+ .order-edit p {
+   margin-bottom: 0;
+ }
+
+ .checkbox-container li.checkbox-breack {
+   width: 100%;
+ }
+
+ .checkbox-container {
+ display: flex;
+ flex-wrap: wrap;
+ padding: 0;
+ }
+
+ .checkbox-container li {
+   list-style: none;
+   padding-right: 20px;
+   padding-bottom: 5px;
+   min-width: 15%;
+ }
+
+ .order-edit p {
+   font-size: 12px;
+ }
+
+ ::ng-deep {
+   .order-edit .mat-form-field {
+     width: 100%;
+     overflow: hidden;
+     border-radius: 4px;
+   }
+
+   .disabled-input .mat-form-field-flex{
+     background-color: #e9e9e9;
+     border-radius: 4px;
+     // height: max-content;
+
+   }
+   // .order-edit .disabled-input .mat-form-field-infix{
+
+   // }
+
+   .order-edit .mat-form-field-wrapper {
+     margin-top: 0;
+     padding-bottom: 6px;
+   }
+
+    .mat-dialog-container .order-edit {
+      width: 440px;
+   }
+
+   .order-edit .checkbox-container .mat-checkbox-inner-container {
+   margin-top: 3px;
+   }
+
+
+
+   .order-edit .mat-form-field {
+     width: 100%;
+   }
+
+   .order-edit .cont-unit-price .uinit-inp {
+      margin-right: 5px;
+
+   }
+ }

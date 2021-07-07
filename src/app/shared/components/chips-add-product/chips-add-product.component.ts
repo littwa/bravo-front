@@ -1,5 +1,5 @@
 import { COMMA, ENTER } from '@angular/cdk/keycodes';
-import { Component, ElementRef, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
 import { MatChipInputEvent, MatChipList, MatChipListChange } from '@angular/material/chips';
@@ -29,11 +29,13 @@ export class ChipsAddProductComponent implements OnInit {
 
   @ViewChild('productInput') productInput: ElementRef<HTMLInputElement>;
   @Output() arrProductIdChanged = new EventEmitter<string[]>();
+  @Input() initialProductList = null
 
   constructor(private store: Store) { }
 
   ngOnInit() {
 
+    if (this.initialProductList) this.products = this.initialProductList.map(el => el.product)
     this.store.dispatch(catalogGetAllRequest())
 
     this.store.select(getCatalog).pipe().subscribe((catalog: any) => {

@@ -38,6 +38,7 @@ import { AddOrderFormComponent } from './components/add-order-form/add-order-for
 import { SplitStrPipe } from './pipes/split-str.pipe';
 import { FilterStatusesPipe } from './pipes/filter-statuses.pipe';
 import { ChipsAddProductComponent } from './components/chips-add-product/chips-add-product.component';
+import { EditOrderFormComponent } from './components/edit-order-form/edit-order-form.component';
 
 
 @NgModule({
@@ -60,6 +61,7 @@ import { ChipsAddProductComponent } from './components/chips-add-product/chips-a
     SplitStrPipe,
     FilterStatusesPipe,
     ChipsAddProductComponent,
+    EditOrderFormComponent,
   ],
   imports: [
     CommonModule,

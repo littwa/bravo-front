@@ -1,57 +1,37 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { Store } from '@ngrx/store';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 import { getCustomers } from 'src/app/core';
 import { authLogInManagerRequest } from 'src/app/core/auth/actions';
 import { customersGetAllRequest } from 'src/app/core/customers/actions';
 import { ERole } from 'src/app/shared/enums';
 import { ISignUp } from 'src/app/shared/interfaces';
 
-
-enum EStatusInput {
-  valid = "valid-input-email",
-  invalid = "invalid-input-email",
-  default = "default-input-email",
-  typing = "typing-input-email"
-}
-
-enum EStatusInputField {
-  valid = "valid-input",
-  invalid = "invalid-input",
-  default = "default-input",
-  typing = "typing-input"
-}
-
 @Component({
   selector: 'app-register-page',
   templateUrl: './register-page.component.html',
   styleUrls: ['./register-page.component.scss']
 })
-export class RegisterPageComponent implements OnInit {
+export class RegisterPageComponent implements OnInit, OnDestroy {
 
   form: FormGroup;
   allCustomers: object[];
   valueInputEmailCustomer = '';
   valueInputPasswordCustomer = '';
   valueInputEmail = '';
-  EStatusInput = EStatusInput;
-  EStatusInputField = EStatusInputField;
-  statusInput = EStatusInput.default;
-  statusInputCustomerPassword = EStatusInputField.default;
-  statusInputCustomerEmail = EStatusInputField.default;
-
+  private unsub$ = new Subject<void>();
   constructor(public store: Store, public dialog: MatDialog) { }
 
-
   ngOnInit(): void {
-
     this.store.dispatch(customersGetAllRequest())
 
-    this.store.select(getCustomers).pipe().subscribe(customers => {
+    this.store.select(getCustomers).pipe(takeUntil(this.unsub$)).subscribe(customers => {
       this.allCustomers = customers
     })
-    // takeUntil(this.unsub$
+
     this.form = new FormGroup({
       customer: new FormControl("", [Validators.minLength(24), Validators.maxLength(24), Validators.required]),
       emailCustomer: new FormControl("", [Validators.email, Validators.required]),
@@ -60,10 +40,7 @@ export class RegisterPageComponent implements OnInit {
     })
   }
 
-
   handleClickRegister(): void {
-    // "role": "customer", "email": "devacc@meta.ua", "username": "devacc", "password": "123456", "customer": "60d5e94af00841375443485f" }
-    // console.log(this.form.value.password === this.form.value.repeatPassword)
     const dto: ISignUp = {
       role: ERole.Customer,
       password: this.form.value.password,
@@ -72,11 +49,11 @@ export class RegisterPageComponent implements OnInit {
     }
 
     this.store.dispatch(authLogInManagerRequest(dto))
-
   }
 
-
-
-  // handleChangeCustomer(e) { }
+  ngOnDestroy(): void {
+    this.unsub$.next(null)
+    this.unsub$.complete()
+  }
 
 }
