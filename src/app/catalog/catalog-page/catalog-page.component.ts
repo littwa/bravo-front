@@ -11,7 +11,7 @@ import catalogdb from '../../shared/data/catalogdb.json'
 import { CatalogService } from 'src/app/shared/services/catalog.service';
 import { Store } from '@ngrx/store';
 import { catalogGetAllSuccess, catalogGetAllRequest, catalogDelRequest } from 'src/app/core/catalog/actions';
-import { getCatalog, getLoading } from 'src/app/core';
+import { getCatalog, getLoading, getRole } from 'src/app/core';
 import { first, map, startWith, takeUntil } from 'rxjs/operators';
 
 @Component({
@@ -22,15 +22,18 @@ import { first, map, startWith, takeUntil } from 'rxjs/operators';
 export class CatalogPageComponent implements OnInit, OnDestroy {
   isLoading: Observable<boolean> = of(false);
   name = "Catalog";
-  displayedColumns: string[] = ["productCode", "product", "unit", "price", "availability", "action"];
-  columnsToDisplay: string[] = this.displayedColumns.slice();
+  //displayedColumns: string[] = ["productCode", "product", "unit", "price", "availability", "action"];
+  columnsToDisplay: string[] = ["productCode", "product", "unit", "price", "availability", "action"]; // this.displayedColumns.slice();
+  columnsToDisplayForRoleCustomer: string[] = ["productCode", "product", "unit", "price", "availability"];
   dataSource: MatTableDataSource<any>;
   $strm: Subject<any> = new Subject<any>();
   AvailabilityProduct = AvailabilityProduct;
   filterAvailavle: string[] = [];
   private unsub$ = new Subject<void>()
+  role$: Observable<string>
 
   constructor(public cdr: ChangeDetectorRef, public dialog: MatDialog, public catalogService: CatalogService, public store: Store) { }
+
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
@@ -40,8 +43,9 @@ export class CatalogPageComponent implements OnInit, OnDestroy {
   @ViewChild("selectAvailability") selectAvailability;
 
   ngOnInit(): void {
+    this.role$ = this.store.select(getRole);
     this.dataSource = new MatTableDataSource([]);
-    this.isLoading = this.store.select(getLoading).pipe(map(load => !load))
+    this.isLoading = this.store.select(getLoading).pipe(map(load => !load));
   }
 
   ngAfterViewInit() {
@@ -91,6 +95,8 @@ export class CatalogPageComponent implements OnInit, OnDestroy {
   }
 
   editProduct(e, row): void {
+
+    // this.role$.subscribe
 
     const dialogRef = this.dialog.open(this.editProductModal, { data: { row } });
 

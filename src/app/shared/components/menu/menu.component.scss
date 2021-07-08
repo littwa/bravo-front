@@ -39,9 +39,8 @@
   width: 100%;
 }
 
-// .role-guard {
-//   height: 0!important
-// }
 
-
-
+.sidenav-container .role-guard {
+  height: 0; // !important
+  cursor: default;
+}

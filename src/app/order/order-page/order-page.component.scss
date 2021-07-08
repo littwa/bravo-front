@@ -144,8 +144,9 @@ table th {
       transition: 300ms
     }
 
-  .mat-header-row .mat-header-cell .mat-sort-header-container {
+  .table--container .mat-header-row .mat-header-cell .mat-sort-header-container {
     width: max-content;
+    padding-left: 5px;
   }
 
    .mat-header-cell:nth-last-of-type(-n+3) {

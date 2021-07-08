@@ -10,14 +10,11 @@ import { getNotify } from 'src/app/core';
   styleUrls: ['./alert.component.scss']
 })
 export class AlertComponent implements OnInit, OnDestroy {
+  delay = 3000;
+  public text: string = "";
+  public type: string;
+  aSub: Subscription;
 
-  delay = 3000
-
-  public text: string = ""
-  public type: string
-
-  aSub: Subscription
-  // private alertService: AlertService
   constructor(public store: Store, public cdr: ChangeDetectorRef) { }
 
   ngOnInit() {
@@ -45,9 +42,3 @@ export class AlertComponent implements OnInit, OnDestroy {
   }
 
 }
-
-
-// error
-// add
-// del
-// edit

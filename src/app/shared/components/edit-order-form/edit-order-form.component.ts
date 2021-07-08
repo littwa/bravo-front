@@ -28,8 +28,6 @@ export class EditOrderFormComponent implements OnInit {
       this.allCustomers = this.selectedCustomers = customers
     })
 
-    console.log("rowData--- ", this.rowData)
-
     this.form = new FormGroup({
       orderNo: new FormControl(this.rowData.orderNo),
       customer: new FormControl(this.rowData.customer),
@@ -48,10 +46,7 @@ export class EditOrderFormComponent implements OnInit {
     const reqDelivery = this.utilityDateTransformation(this.form.value.reqDelivery);
     const ordered = this.utilityDateTransformation(this.form.value.ordered);
     const payload = { ...this.form.value, customerId: this.form.value.customerId._id, reqDelivery, ordered };
-    // console.log("dtoEditOrder--", this.form.value.customerId);
-    console.log("dtoEditOrder--", payload);
     this.store.dispatch(ordersEditRequest({ payload, id: this.rowData._id }))
-    // { payload: dtoEditOrder, id: this.rowData._id }
   }
 
   onKey(value) {

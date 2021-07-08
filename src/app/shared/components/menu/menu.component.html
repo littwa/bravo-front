@@ -1,6 +1,6 @@
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav #sidenav mode="side" [(opened)]="opened" position="start">
-    <ul class="nav-icon">
+    <ul *ngIf="role$ | ngrxPush as role" class="nav-icon">
       <li>
         <svg width="70" height="36" viewBox="10 -10 48 36" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path fill-rule="evenodd" clip-rule="evenodd"
@@ -14,9 +14,12 @@
       <li [routerLink]="['catalog']" routerLinkActive="activelink">
         Catalog
       </li>
-      <li class="role-guard" [routerLink]="['customers']" routerLinkActive="activelink">
+      <li *ngIf="role === 'admin'; else empty" [routerLink]="['customers']" routerLinkActive="activelink">
         Customers
       </li>
+      <ng-template #empty>
+        <li class="role-guard"></li>
+      </ng-template>
       <li [routerLink]="['login']" (click)="handleClick()">
         Log Out
       </li>

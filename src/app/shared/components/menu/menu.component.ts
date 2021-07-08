@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
 import { Store } from '@ngrx/store';
 import { authLogOutManagerRequest } from 'src/app/core/auth/actions';
+import { Observable, of } from 'rxjs';
+import { getRole } from 'src/app/core';
 
 @Component({
   selector: 'app-menu',
@@ -13,18 +15,19 @@ export class MenuComponent implements OnInit {
   title: string;
   opened: boolean = true;
 
+  role$: Observable<string>
+
+
   constructor(private store: Store, public breakpointObserver: BreakpointObserver) { }
 
   ngOnInit(): void {
-    this.breakpointObserver
-      .observe(['(max-width: 920px)'])
-      .subscribe((state: BreakpointState) => {
+    this.role$ = this.store.select(getRole)
+
+    this.breakpointObserver.observe(['(max-width: 920px)']).subscribe((state: BreakpointState) => {
         if (state.matches) {
           this.opened = false;
-          console.log('Viewport is 960px or less!');
         } else {
           this.opened = true;
-          console.log('Viewport is Big!');
         }
       });
 

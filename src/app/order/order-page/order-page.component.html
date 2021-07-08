@@ -7,19 +7,6 @@
 <div class="mat-elevation-z8 table--container">
   <table mat-table [dataSource]="dataSource" matSort multiTemplateDataRows>
 
-    <!-- <ng-container matColumnDef="select">
-      <th mat-header-cell *matHeaderCellDef>
-        <mat-checkbox color="primary" (change)="$event ? masterToggle() : null" [checked]="selection.hasValue() && isAllSelected()"
-          [indeterminate]="selection.hasValue() && !isAllSelected()" [aria-label]="checkboxLabel()">
-        </mat-checkbox>
-      </th>
-      <td mat-cell *matCellDef="let row">
-        <mat-checkbox color="primary" (click)="$event.stopPropagation()" (change)="$event ? selection.toggle(row) : null"
-          [checked]="selection.isSelected(row)" [aria-label]="checkboxLabel(row)">
-        </mat-checkbox>
-      </td>
-    </ng-container> -->
-
     <ng-container matColumnDef="orderNo">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Order No</th>
       <td class="first" mat-cell *matCellDef="let row">
@@ -159,11 +146,11 @@
    <td mat-cell *matCellDef="let row" [style.color]="row.reqDelivery"> {{ row.reqDelivery.date | date: "EE, MMMM d, y, h:mm" }} </td>
     </ng-container>
 
-    <ng-container *ngIf="role | async as currentRole " matColumnDef="status">
+    <ng-container *ngIf="role | async as currentRole" matColumnDef="status">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Status </th>
       <td mat-cell *matCellDef="let row" [style.color]="row.status">
        <div class="menu-status">
-        <button mat-icon-button (click)="handleConfirmed($event, row)" [matMenuTriggerFor]="menu">
+        <button [disabled]="currentRole === 'customer' && !(row.status === 'new')" mat-icon-button (click)="handleConfirmed($event, row)" [matMenuTriggerFor]="menu">
           <mat-icon>more_vert</mat-icon>
         </button>
         <mat-menu #menu="matMenu">
@@ -173,7 +160,12 @@
         </mat-menu>
        </div>
        <p [class]="row.status | splitStr" class="confirmed-txt">{{row.status}}</p>
+
+       <button (click)="handleConfirmedToCompleted($event, row)" *ngIf="currentRole === 'customer' && (row.status === 'deliverred')" color="primary" mat-icon-button>
+        <mat-icon>thumb_up_alt</mat-icon>
+      </button>
       </td>
+
     </ng-container>
 
     <ng-container matColumnDef="expandedDetail">

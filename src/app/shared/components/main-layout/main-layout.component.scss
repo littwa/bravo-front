@@ -36,9 +36,7 @@
   width: 100vw;
 }
 
-// .role-guard {
-//   opacity: 0;
-
-// }
-
-
+.container-menu .role-guard {
+  height: 0; // !important
+  cursor: default;
+}

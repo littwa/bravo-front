@@ -67,14 +67,12 @@ export class CustomersPageComponent implements OnInit, OnDestroy {
 
   editCustomer(e, row) {
 
-    // console.log("edit", e, row)
 
     const dialogRef = this.dialog.open(EditCustomerFormComponent, { data: row });
 
     dialogRef.afterClosed().subscribe(result => {
 
       if (result) {
-        // this.$strm.next()
         console.log(`editCustomer Dialog result: ${result}`);
       }
     });

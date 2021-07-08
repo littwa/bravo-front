@@ -53,8 +53,6 @@ export class LoginPageComponent implements OnInit {
   }
 
   handleChangeCustomerEmail(v, ref) {
-    console.log(v, ref)
-    console.log(this.statusInputCustomerEmail, ref.valid)
     if (!ref.value) return this.statusInputCustomerEmail = EStatusInputField.typing
     if (!!ref.value && !ref.valid) this.statusInputCustomerEmail = EStatusInputField.typing
     if (ref.invalid && ref.touched) return this.statusInputCustomerEmail = EStatusInputField.invalid
@@ -63,8 +61,6 @@ export class LoginPageComponent implements OnInit {
   }
 
   handleChange(v, ref) {
-    console.log(v, ref)
-    console.log(this.statusInput, ref.valid)
     if (!ref.value) return this.statusInput = EStatusInput.typing
     if (!!ref.value && !ref.valid) this.statusInput = EStatusInput.typing
     if (ref.invalid && ref.touched) return this.statusInput = EStatusInput.invalid
@@ -73,7 +69,6 @@ export class LoginPageComponent implements OnInit {
   }
 
   handleChangePass(v) {
-    console.log(this.statusInputCustomerPassword, !this.passwordCustomer.value)
     if (!this.passwordCustomer.value) return this.statusInputCustomerPassword = EStatusInputField.typing
     if (!!this.passwordCustomer.value && !this.passwordCustomer.valid) this.statusInputCustomerPassword = EStatusInputField.typing
     if (this.passwordCustomer.invalid && this.passwordCustomer.touched) return this.statusInputCustomerPassword = EStatusInputField.invalid
@@ -87,16 +82,9 @@ export class LoginPageComponent implements OnInit {
   }
 
   handleClickCustomer(): void {
-    console.log({
-      email: this.valueInputEmailCustomer,
-      password: this.valueInputPasswordCustomer,
-      role: "customer"
-    })
-
     this.store.dispatch(authSignInCustomerRequest({ email: this.valueInputEmailCustomer, password: this.valueInputPasswordCustomer, role: "customer" }))
   }
 
-  //===================
 
   handleChangeCustomer(e) { }
 

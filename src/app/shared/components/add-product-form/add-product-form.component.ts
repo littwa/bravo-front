@@ -16,12 +16,11 @@ export class AddProductFormComponent implements OnInit, OnDestroy {
 
   Availability = AvailabilityProduct
   form: FormGroup;
-  price
+  price: FormArray;
   uns: Subscription;
+  @Input() submitFormAddProduct: Observable<any>;
 
   constructor(public store: Store) { }
-
-  @Input() submitFormAddProduct: Observable<any>;
 
   ngOnInit(): void {
 
@@ -40,7 +39,6 @@ export class AddProductFormComponent implements OnInit, OnDestroy {
     })
 
     this.price = this.form.get('price') as FormArray;
-
   }
 
   addUnit() {
@@ -62,10 +60,6 @@ export class AddProductFormComponent implements OnInit, OnDestroy {
     // this.form.reset()
   }
 
-  ngOnDestroy() {
-    // this.uns.unsubscribe();
-  }
-
   removeCost($event, i) {
     (this.form.controls.price as FormArray).removeAt(i)
   }
@@ -73,5 +67,7 @@ export class AddProductFormComponent implements OnInit, OnDestroy {
   testClick() {
     console.log(this.form)
   }
+
+  ngOnDestroy() { }
 
 }

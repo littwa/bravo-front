@@ -49,7 +49,7 @@ export class OrderPageComponent implements OnInit, OnDestroy {
   visibility: boolean = true;
   private unsub$ = new Subject<void>();
   AddOrderFormComponent = AddOrderFormComponent;
-  statuses = ["canceled", "in progress", "deliverred", "completed"]; // ,"new"
+  statuses = ["canceled", "in progress", "deliverred"]; // ,"new" , "completed"
   role: Observable<string> = of("");
   range = new FormGroup({
     start: new FormControl(),
@@ -68,7 +68,6 @@ export class OrderPageComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.isLoading = this.store.select(getLoading).pipe(map(load => !load))
     this.dataSource = new MatTableDataSource([]);
-    console.log(this.role)
     this.role = this.store.select(getRole).pipe(tap(r => r === "customer" ? this.statuses = ["canceled"] : this.statuses))
   }
 
@@ -120,27 +119,6 @@ export class OrderPageComponent implements OnInit, OnDestroy {
     if (!this.range) return true;
     return new Date(data.reqDelivery.date).getTime() > this.range.value.start.getTime() && new Date(data.reqDelivery.date).getTime() < this.range.value.end.getTime();
   }
-
-  //////////////////////////////////////////////////////////////
-  // isAllSelected() {
-  //   const numSelected = this.selection.selected.length;
-  //   const numRows = this.dataSource.data.length;
-  //   return numSelected == numRows;
-  // }////////
-
-  // masterToggle() {
-  //   if (this.isAllSelected()) {
-  //     this.selection.clear();
-  //     return;
-  //   }
-  //   this.selection.select(...this.dataSource.data);
-  // }//////
-
-  // checkboxLabel(row?: any): string {
-  //   if (!row) return `${this.isAllSelected() ? 'select' : 'deselect'} all`;
-  //   return `${this.selection.isSelected(row) ? 'deselect' : 'select'} row ${this.dataSource.data.length + 1}`;
-  // }///////
-  //////////////////////////////////////////////////////////////
 
   togleChip() {
     this.visibility = !this.visibility;
@@ -202,24 +180,20 @@ export class OrderPageComponent implements OnInit, OnDestroy {
   }
 
   handleChangeStatus($event, row, status) {
-    console.log($event, row, status)
     this.store.dispatch(ordersConfirmStatusRequest({ payload: { status }, id: row._id }))
   }
 
   handleChangeOrder(e, row) {
     e.stopPropagation();
-    console.log("handleChangeOrder work")
-
-    console.log("handleChangeOrder", e, row)
 
     const dialogRef = this.dialog.open(EditOrderFormComponent, { data: row });
 
     dialogRef.afterClosed().subscribe(result => {
 
-      if (result) {
-        // this.$strm.next()
-        console.log(`editCustomer Dialog result: ${result}`);
-      }
+      // if (result) {
+      //   // this.$strm.next()
+      //   console.log(`editCustomer Dialog result: ${result}`);
+      // }
     });
   }
 
@@ -228,20 +202,10 @@ export class OrderPageComponent implements OnInit, OnDestroy {
     this.unsub$.complete()
   }
 
-  // editCustomer(e, row) {
-
-  //   // console.log("edit", e, row)
-
-  //   const dialogRef = this.dialog.open(EditCustomerFormComponent, { data: row });
-
-  //   dialogRef.afterClosed().subscribe(result => {
-
-  //     if (result) {
-  //       // this.$strm.next()
-  //       console.log(`editCustomer Dialog result: ${result}`);
-  //     }
-  //   });
-  // }
+  handleConfirmedToCompleted(e, row) {
+    e.stopPropagation()
+    this.store.dispatch(ordersConfirmStatusRequest({ payload: { status: "completed" }, id: row._id }))
+  }
 
 
 }

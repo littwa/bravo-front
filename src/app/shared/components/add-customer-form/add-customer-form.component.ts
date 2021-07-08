@@ -29,7 +29,6 @@ export class AddCustomerFormComponent implements OnInit {
   }
 
   submitFormCustomer() {
-    console.log("submitFormCustomer", this.form.value)
     this.store.dispatch(customersAddRequest(this.form.value))
   }
 

@@ -35,7 +35,6 @@ export class CheckEmailPageComponent implements OnInit {
     this.loading$ = this.store.select(getLoading).pipe(map(v => !!v))
     this.error$ = this.store.select(getErrorAuth).pipe(map(v => !!v))
     this.store.select(getRole).subscribe(v => this.role = v)
-    // .subscribe(v => console.log(!!v))
   }
 
 
@@ -55,15 +54,8 @@ export class CheckEmailPageComponent implements OnInit {
   }
 
   verifyRequest(input1, input2) {
-    console.log("result:", this.role)
-
-    // this.store.dispatch(authVerifyCustomerRequest({ payload: (input1 + input2) }))
-
     if (this.role === ERole.Customer) return this.store.dispatch(authVerifyCustomerRequest({ payload: (input1 + input2) }))
     if (this.role === ERole.Admin) return this.store.dispatch(authVerifyManagerRequest({ payload: (input1 + input2) }))
-
-    //this.store.dispatch(authVerifyCustomerRequest({ payload: (input1 + input2) }))
-   //  this.store.dispatch(authVerifyManagerRequest({ payload: (input1 + input2) }))
   }
 
 }

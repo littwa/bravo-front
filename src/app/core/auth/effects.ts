@@ -44,7 +44,7 @@ export class ManegerEffects {
     ofType(action.AUTH_VERIFY_CUSTOMER_REQUEST),
     switchMap(
       (props: any) => {
-        console.log(444, props); return this.managerService.verifyCustomer(props.payload).pipe(
+        return this.managerService.verifyCustomer(props.payload).pipe(
           map(data => action.authVerifyManagerSuccess({ payload: data })),
           tap((data: any) => { this.router.navigate(['/login']) }),
           catchError((err: any) => of(action.authVerifyManagerError({ err: err.message })))
