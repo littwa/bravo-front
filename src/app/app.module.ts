@@ -17,10 +17,6 @@ import { DndDirective } from './shared/directives/dnd.directive';
 import { AuthSetTokenInterceptor } from './shared/interceptors/auth.interceptor';
 import { AuthGuard } from './shared/guards/auth.guard';
 
-
-
-
-
 const INTERCEPTOR_PROVIDER = {
   provide: HTTP_INTERCEPTORS,
   multi: true,
