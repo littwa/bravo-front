@@ -1,5 +1,12 @@
-<div [ngStyle]="{padding: '15px'}">
-  <p >choice-customer-page works!</p>
-  <button routerLink="/login" (click)="handleClick()">To Login Customer</button>
+<div *ngIf="isNew" [ngStyle]="{padding: '15px'}">
+  <!-- <p >choice-customer-page works!</p> -->
+  <button (click)="handleClick($event)">Here choisce customer</button>
+  <!-- routerLink="/" -->
+  <div class="layout-lable" >Customer</div>
+      <mat-form-field (click)="handleClick($event)" appearance="outline" class="register-form-field">
+        <mat-select [(ngModel)]="selectedCustomer">
+          <mat-option disabled value="">Choose Your Customer</mat-option>
+          <mat-option *ngFor="let state of allCustomers" [value]="state._id">{{state.name}}</mat-option>
+        </mat-select>
+      </mat-form-field>
 </div>
-

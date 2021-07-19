@@ -91,9 +91,9 @@ export class LoginPageComponent implements OnInit {
 
   testGoogleAuth() {
 
-    const myHeaders = new HttpHeaders().set('Authorization', 'ya29.a0ARrdaM8D0SVeygk86Yqyvt_hUCY-M3H4QXez_t_Sxr6ks5W7fUPtcF4C7PHTRPHmLa3ue2eF7HM3_l1Q5u8EXQFaYekAAuCT3gXnUhxP24yyIoQLjXMfE7QbCdGozWd_7veavbEQyv_DNz2gMtcIIiJLboVr');
+    // const myHeaders = new HttpHeaders().set('Authorization', 'ya29.a0ARrdaM8D0SVeygk86Yqyvt_hUCY-M3H4QXez_t_Sxr6ks5W7fUPtcF4C7PHTRPHmLa3ue2eF7HM3_l1Q5u8EXQFaYekAAuCT3gXnUhxP24yyIoQLjXMfE7QbCdGozWd_7veavbEQyv_DNz2gMtcIIiJLboVr');
 
-    this.http.post('http://localhost:3000/google/test', null, { headers: myHeaders }).subscribe(d => console.log("d: ", d));
+    // this.http.post('http://localhost:3000/google/test', null, { headers: myHeaders }).subscribe(d => console.log("d: ", d));
 
     // this.http.get('http://localhost:3000/google/test', {})
   }

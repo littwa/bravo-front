@@ -15,7 +15,7 @@ const routes: Routes = [
   },
   { path: 'login', loadChildren: () => import("./login/login.module").then(m => m.LoginModule) },
   { path: "register", loadChildren: () => import("./register/register.module").then(m => m.RegisterModule) },
-  { path: "choicse-customer", loadChildren: () => import("./choice-customer/choice-customer.module").then(m => m.ChoiceCustomerModule) },
+  { path: "choice-customer", loadChildren: () => import("./choice-customer/choice-customer.module").then(m => m.ChoiceCustomerModule) },
   { path: '**', loadChildren: () => import("./not-found/not-found.module").then(m => m.NotFoundModule) }
 ];
 

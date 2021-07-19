@@ -30,7 +30,6 @@ const INTERCEPTOR_PROVIDER = {
     MainLayoutComponent,
     MenuComponent,
     DndDirective,
-
   ],
   imports: [
     BrowserModule,
