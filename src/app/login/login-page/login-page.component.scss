@@ -102,3 +102,59 @@ color: blue;
     width: 200px;
   }
 }
+
+
+//======================================
+
+.link{
+  text-decoration: none;
+}
+
+.google-btn {
+  margin: 25px;
+  width: 80%;
+  min-width: 184px;
+  max-width: 184px;
+  height: 42px;
+  background-color: #fcfcfc;
+  border-radius: 2px;
+  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, .2);
+  cursor: pointer;
+  cursor: hand;
+  align-self: center;
+  transition: all 200ms ease 0s;
+  display: flex;
+}
+.google-btn .google-icon-wrapper {
+  // position: absolute;
+  margin-top: 1px;
+  margin-left: 1px;
+  width: 40px;
+  height: 40px;
+  border-radius: 2px;
+}
+.google-btn .google-icon-svg {
+  margin-top: 8px;
+  margin-left: 8px;
+}
+.google-btn .btn-text {
+  // float: right;
+  // margin: 11px 14px 40px 40px;
+  color: #4d4d4d;
+  font-size: 14px;
+  letter-spacing: .2px;
+  // font-family: Roboto;
+  text-decoration: none!important;
+  text-decoration-style: none;
+
+  // user-select: none
+  text-decoration-thickness: none!important;
+}
+.google-btn:hover {
+  box-shadow: 0 3px 8px rgba(117, 117, 117, .5);
+}
+.google-btn:active {
+  box-shadow: 0 1px 1px #757575;
+  background: #F8F8F8;
+  color: #fff;
+}

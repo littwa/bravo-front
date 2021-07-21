@@ -31,6 +31,11 @@ export class ManagerService {
   public verifyCustomer(code: string): Observable<any> {
     return this.http.get<any>(`${this.urlApi}${AndPoint.auth.verifyCustomer}${code}`)
   }
+  /////////
+  public updateCustomer(date: any): Observable<any> {
+    console.log(777, date)
+    return this.http.post<any>(`${this.urlApi}${AndPoint.auth.updateCustomer}/${date.id}`, date.body)
+  }
 
   public getCurrentManger(): Observable<any> {
     return this.http.get<any>(`${this.urlApi}${AndPoint.auth.getCurrentManger}`);

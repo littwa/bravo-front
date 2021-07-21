@@ -4,7 +4,8 @@ export const AndPoint = {
     verifyManger: 'users/admin/verify/',
     getCurrentManger: 'users/get',
     verifyCustomer: 'users/customer/verify/',
-    signInCustomer: 'users/sign-in'
+    signInCustomer: 'users/sign-in',
+    updateCustomer: 'users/up-date'
     // logInManger: 'managers/log-in/',
     // verifyManger: 'managers/verify/',
     // getCurrentManger: 'managers/get/'

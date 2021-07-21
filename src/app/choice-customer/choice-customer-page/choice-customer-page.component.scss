@@ -1,0 +1,23 @@
+.choice-customer-wrapper {
+  padding: 20px;
+  margin: 0 auto;
+}
+.choice-customer-wrapper .btn-assign {
+  display: block;
+  margin: 0 auto;
+}
+.sel-wrapper {
+  width: max-content;
+  margin: 0 auto;
+}
+
+.layout-lable{
+  padding: 20px;
+}
+
+::ng-deep {
+  .choice-customer-wrapper .mat-form-field-infix {
+    border-top: inset transparent;
+  }
+
+}

@@ -19,8 +19,16 @@
 
     <div *ngIf="isCustomer; else admin" class="container-login">
       <h2 mat-dialog-title class="log-in-title"><span>Log In Customer</span></h2>
-      <a href="http://localhost:3000/users/google-auth">Sign In with Google</a>
-      <button (click)="testGoogleAuth()">Test</button>
+      <a class="link" href="http://localhost:3000/users/google-auth">
+      <div class="google-btn">
+          <div class="google-icon-wrapper">
+            <img class="google-icon-svg" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"/>
+          </div>
+          <p class="btn-text">Sign in with Google</p>
+      </div>
+    </a>
+      <!-- Sign In with Google</a> -->
+
         <div class="layout-lable" [class]="statusInputCustomerEmail">Your Email</div>
         <mat-form-field appearance="outline" class="example-form-field">
           <input matInput type="email" (ngModelChange)="handleChangeCustomerEmail($event, emailCustomer)" name="emailCustomer" [(ngModel)]="valueInputEmailCustomer" #emailCustomer="ngModel" placeholder="email@example.com" pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$">

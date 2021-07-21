@@ -46,12 +46,26 @@ export class ManegerEffects {
       (props: any) => {
         return this.managerService.verifyCustomer(props.payload).pipe(
           map(data => action.authVerifyManagerSuccess({ payload: data })),
-          tap((data: any) => { this.router.navigate(['/login']) }),
+          tap((data: any) => { this.router.navigate(['/']) }),
           catchError((err: any) => of(action.authVerifyManagerError({ err: err.message })))
         )
       }
     )
   ))
+  /////////////////////
+  updateCustomer$ = createEffect(() => this.actions$.pipe(
+    ofType(action.AUTH_UPDATE_CUSTOMER_REQUEST),
+    switchMap(
+      (props: any) => {
+        return this.managerService.updateCustomer(props.payload).pipe(
+          map(data => action.authUpdateCustomerSuccess({ payload: data })),
+          tap((data: any) => { console.log(88, data); this.router.navigate(['/']) }),
+          catchError((err: any) => of(action.authUpdateCustomerError({ err: err.message })))
+        )
+      }
+    )
+  ))
+/////////////////////
 
   logOutManger$ = createEffect(() => this.actions$.pipe(
     ofType(action.AUTH_LOG_OUT_MANAGER_REQUEST),
