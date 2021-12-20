@@ -7,19 +7,20 @@ import { AuthGuard } from './shared/guards/auth.guard';
 const routes: Routes = [
   {
     path: '', canActivate: [AuthGuard], component: MainLayoutComponent, children: [
-      { path: '', redirectTo: "order", pathMatch: 'full' },
-      { path: 'order', loadChildren: () => import("./order/order.module").then(m => m.OrderModule) },
-      { path: 'customers', loadChildren: () => import("./customers/customers.module").then(m => m.CustomersModule) },
-      { path: "catalog", loadChildren: () => import("./catalog/catalog.module").then(m => m.CatalogModule) },
+      { path: '', redirectTo: 'order', pathMatch: 'full' },
+      { path: 'order', loadChildren: () => import('./order/order.module').then(m => m.OrderModule) },
+      { path: 'customers', loadChildren: () => import('./customers/customers.module').then(m => m.CustomersModule) },
+      { path: 'catalog', loadChildren: () => import('./catalog/catalog.module').then(m => m.CatalogModule) },
+      { path: 'develop', loadChildren: () => import('./develop/develop.module').then(m => m.DevelopModule) },
     ]
   },
-  { path: 'login', loadChildren: () => import("./login/login.module").then(m => m.LoginModule) },
-  { path: "register", loadChildren: () => import("./register/register.module").then(m => m.RegisterModule) },
-  { path: "choice-customer", loadChildren: () => import("./choice-customer/choice-customer.module").then(m => m.ChoiceCustomerModule) },
-  { path: '**', loadChildren: () => import("./not-found/not-found.module").then(m => m.NotFoundModule) }
+  { path: 'login', loadChildren: () => import('./login/login.module').then(m => m.LoginModule) },
+  { path: 'register', loadChildren: () => import('./register/register.module').then(m => m.RegisterModule) },
+  { path: 'choice-customer', loadChildren: () => import('./choice-customer/choice-customer.module').then(m => m.ChoiceCustomerModule) },
+  { path: '**', loadChildren: () => import('./not-found/not-found.module').then(m => m.NotFoundModule) }
 ];
 
-const config = { preloadingStrategy: PreloadAllModules }
+const config = { preloadingStrategy: PreloadAllModules };
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, config)],

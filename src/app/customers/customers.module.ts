@@ -5,7 +5,7 @@ import { SharedModule } from '../shared/shared.module';
 
 const routes = [
   { path: '', component: CustomersPageComponent }
-]
+];
 
 @NgModule({
   declarations: [
