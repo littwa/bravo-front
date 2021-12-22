@@ -16,6 +16,7 @@ import { MenuComponent } from './shared/components/menu/menu.component';
 import { DndDirective } from './shared/directives/dnd.directive';
 import { AuthSetTokenInterceptor } from './shared/interceptors/auth.interceptor';
 import { AuthGuard } from './shared/guards/auth.guard';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 const INTERCEPTOR_PROVIDER = {
@@ -43,6 +44,7 @@ const INTERCEPTOR_PROVIDER = {
     StoreDevtoolsModule.instrument(),
     BrowserAnimationsModule,
     HttpClientModule,
+    NgbModule,
   ],
   providers: [INTERCEPTOR_PROVIDER, AuthGuard],
   bootstrap: [AppComponent]
