@@ -1,3 +1,4 @@
+
 .logo-login {
   padding: 15px 0 0 15px;
 }
@@ -22,12 +23,10 @@
   align-items: center;
   flex-direction: column;
   width: 50vh;
-  margin:  5vh auto;
-  background:#fff;
+  margin: 5vh auto;
+  background: #fff;
   border-radius: 5px;
   border: 1px solid #bbbbbb;
-  // margin: 15vh auto ;
-  // padding: 20px 30px;
 }
 
 .log-in-title {
@@ -36,24 +35,24 @@
 }
 
 .container-login p {
- width: 100%;
- text-align: center;
+  width: 100%;
+  text-align: center;
 }
 
 .valid-input-email {
-color: green;
+  color: green;
 }
 
-.invalid-input-email{
-color: red;
+.invalid-input-email {
+  color: red;
 }
 
 .default-input-email {
-color: #757575;
+  color: #757575;
 }
 
 .typing-input-email {
-color: blue;
+  color: blue;
 }
 
 .layout-lable {
@@ -69,23 +68,20 @@ color: blue;
     padding: 18px 0 14px 0;
   }
 
-  .container-login .mat-form-field-wrapper {
-    width: 400px;
-
-  }
   .container-login .mat-form-field-flex {
     min-height: 40px;
   }
 
   .container-login .mat-dialog-actions {
     padding-bottom: 50px;
+    width: calc(100% - 100px);
+
+    button {
+      width: 100%;
+    }
   }
 
-  .container-login .mat-dialog-actions button {
-    width: 400px;
-  }
-
-  @media (max-width: 520px){
+  @media (max-width: 520px) {
     .container-login .mat-dialog-actions button {
       width: 200px;
     }
@@ -97,16 +93,13 @@ color: blue;
 
 }
 
-@media (max-width: 520px){
+@media (max-width: 520px) {
   .container-login {
     width: 200px;
   }
 }
 
-
-//======================================
-
-.link{
+.link {
   text-decoration: none;
 }
 
@@ -125,34 +118,33 @@ color: blue;
   transition: all 200ms ease 0s;
   display: flex;
 }
+
 .google-btn .google-icon-wrapper {
-  // position: absolute;
   margin-top: 1px;
   margin-left: 1px;
   width: 40px;
   height: 40px;
   border-radius: 2px;
 }
+
 .google-btn .google-icon-svg {
   margin-top: 8px;
   margin-left: 8px;
 }
+
 .google-btn .btn-text {
-  // float: right;
-  // margin: 11px 14px 40px 40px;
   color: #4d4d4d;
   font-size: 14px;
   letter-spacing: .2px;
-  // font-family: Roboto;
-  text-decoration: none!important;
+  text-decoration: none !important;
   text-decoration-style: none;
-
-  // user-select: none
-  text-decoration-thickness: none!important;
+  text-decoration-thickness: none !important;
 }
+
 .google-btn:hover {
   box-shadow: 0 3px 8px rgba(117, 117, 117, .5);
 }
+
 .google-btn:active {
   box-shadow: 0 1px 1px #757575;
   background: #F8F8F8;

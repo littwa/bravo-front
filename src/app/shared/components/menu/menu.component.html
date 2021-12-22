@@ -14,7 +14,7 @@
       <li [routerLink]="['catalog']" routerLinkActive="activelink">
         Catalog
       </li>
-      <li [routerLink]="['develop']" routerLinkActive="activelink">
+      <li [routerLink]="['develop']" routerLinkActive="active-link-red">
         Develop
       </li>
       <li *ngIf="role === 'admin'; else empty" [routerLink]="['customers']" routerLinkActive="activelink">

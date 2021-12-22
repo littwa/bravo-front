@@ -13,9 +13,9 @@ import { getRole } from 'src/app/core';
 export class MenuComponent implements OnInit {
 
   title: string;
-  opened: boolean = true;
+  opened = true;
 
-  role$: Observable<string>
+  role$: Observable<string>;
 
 
   constructor(private store: Store, public breakpointObserver: BreakpointObserver) { }

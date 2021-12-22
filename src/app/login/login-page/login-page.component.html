@@ -33,8 +33,8 @@
         <mat-form-field appearance="outline" class="example-form-field">
           <input matInput type="email" (ngModelChange)="handleChangeCustomerEmail($event, emailCustomer)" name="emailCustomer" [(ngModel)]="valueInputEmailCustomer" #emailCustomer="ngModel" placeholder="email@example.com" pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$">
           <mat-icon matSuffix>
-            <div [ngSwitch]="statusInputCustomerEmail">
-              <ng-template [ngSwitchCase]="EStatusInputField.valid" tchDefault>
+            <div [ngSwitch]="statusInputCustomerEmail">
+              <ng-template [ngSwitchCase]="EStatusInputField.valid" tchDefault>
                 <svg width="17" height="13" viewBox="0 0 17 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
                     d="M5.41409 9.58579L1.41421 5.58567L0 6.99989L5.41409 12.4142L16.4141 1.41423L14.9998 1.33514e-05L5.41409 9.58579Z"
@@ -54,7 +54,7 @@
                     fill="#F5413D" />
                 </svg>
               </ng-template>
-              <ng-template ngSwitchDefault></ng-template>
+              <ng-template ngSwitchDefault></ng-template>
             </div>
           </mat-icon>
         </mat-form-field>
@@ -63,9 +63,9 @@
         <mat-form-field appearance="outline" class="example-form-field">
           <input matInput type="password" (ngModelChange)="handleChangePass($event)" name="password" [(ngModel)]="valueInputPasswordCustomer" #passwordCustomer="ngModel" placeholder="password" minlength="6">
           <mat-icon matSuffix>
-            <div [ngSwitch]="statusInputCustomerPassword">
-              <ng-template [ngSwitchCase]="EStatusInputField.typing"></ng-template>
-              <ng-template [ngSwitchCase]="EStatusInputField.valid" tchDefault>
+            <div [ngSwitch]="statusInputCustomerPassword">
+              <ng-template [ngSwitchCase]="EStatusInputField.typing"></ng-template>
+              <ng-template [ngSwitchCase]="EStatusInputField.valid" tchDefault>
                 <svg width="17" height="13" viewBox="0 0 17 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
                     d="M5.41409 9.58579L1.41421 5.58567L0 6.99989L5.41409 12.4142L16.4141 1.41423L14.9998 1.33514e-05L5.41409 9.58579Z"
@@ -105,8 +105,8 @@
         <mat-form-field appearance="outline" class="example-form-field">
           <input matInput type="email" (ngModelChange)="handleChange($event, email)" name="email" [(ngModel)]="valueInputEmail" #email="ngModel" placeholder="email@example.com" pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$">
           <mat-icon matSuffix>
-            <div [ngSwitch]="statusInput">
-              <ng-template [ngSwitchCase]="EStatusInput.valid" tchDefault>
+            <div [ngSwitch]="statusInput">
+              <ng-template [ngSwitchCase]="EStatusInput.valid" tchDefault>
                 <svg width="17" height="13" viewBox="0 0 17 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
                     d="M5.41409 9.58579L1.41421 5.58567L0 6.99989L5.41409 12.4142L16.4141 1.41423L14.9998 1.33514e-05L5.41409 9.58579Z"
@@ -126,13 +126,13 @@
                     fill="#F5413D" />
                 </svg>
               </ng-template>
-              <ng-template ngSwitchDefault></ng-template>
+              <ng-template ngSwitchDefault></ng-template>
             </div>
           </mat-icon>
         </mat-form-field>
         <p>Enter the email you signed up with<br>
           to receive your login code</p>
-      <mat-dialog-actions align="end">
+      <mat-dialog-actions>
         <button (click)="handleClickAdmin()" mat-raised-button [disabled]="email.invalid || !email.value" color="primary" cdkFocusInitial>Log
           In </button>
       </mat-dialog-actions>

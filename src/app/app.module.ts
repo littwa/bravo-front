@@ -22,7 +22,7 @@ const INTERCEPTOR_PROVIDER = {
   provide: HTTP_INTERCEPTORS,
   multi: true,
   useClass: AuthSetTokenInterceptor
-}
+};
 
 @NgModule({
   declarations: [

@@ -18,7 +18,7 @@
   align-self: end;
 }
 
-.nav-icon li{
+.nav-icon li {
   line-height: 48px;
   height: 48px;
   font-size: 16px;
@@ -33,6 +33,13 @@
   border-top-right-radius:10px;
   border-bottom-right-radius:10px;
   color: #1672EC;
+}
+
+.active-link-red {
+  background-color: #911;
+  border-top-right-radius:10px;
+  border-bottom-right-radius:10px;
+  color: #000;
 }
 
 .sidenav-content-width {
