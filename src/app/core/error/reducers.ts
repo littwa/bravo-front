@@ -1,8 +1,7 @@
-import { createReducer, on } from "@ngrx/store";
-import { Action } from "rxjs/internal/scheduler/Action";
-import * as catalogAction from "../catalog/actions";
-import * as customersAction from "../customers/actions";
-import * as ordersAction from "../orders/actions";
+import { createReducer, on } from '@ngrx/store';
+import * as catalogAction from '../catalog/actions';
+import * as customersAction from '../customers/actions';
+import * as ordersAction from '../orders/actions';
 
 const INITIAL_STATE_ERROR = null;
 

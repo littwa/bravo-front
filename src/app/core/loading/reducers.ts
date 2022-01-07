@@ -1,9 +1,8 @@
-import { createReducer, createSelector, on } from "@ngrx/store";
-import { Action } from "rxjs/internal/scheduler/Action";
-import * as catalogAction from "../catalog/actions";
-import * as customersAction from "../customers/actions";
-import * as ordersAction from "../orders/actions";
-import * as authAction from "../auth/actions";
+import { createReducer, createSelector, on } from '@ngrx/store';
+import * as catalogAction from '../catalog/actions';
+import * as customersAction from '../customers/actions';
+import * as ordersAction from '../orders/actions';
+import * as authAction from '../auth/actions';
 
 const INITIAL_STATE_LOADING = false;
 
@@ -54,8 +53,7 @@ export const loadingReducers = createReducer(INITIAL_STATE_LOADING,
   on(authAction.authGetCurrentManagerError, () => false),
   on(authAction.authVerifyManagerError, () => false),
   on(authAction.authLogInManagerError, () => false),
-
-)
+);
 
 export const getLoading = (state: boolean): boolean => state;
-// let ff = createSelector()
+

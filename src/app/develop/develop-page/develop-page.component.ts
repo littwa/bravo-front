@@ -10,6 +10,8 @@ export class DevelopPageComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    const h = {'qw-qw': 'qw'};
+    console.log(1000055, h, h['qw-qw']);
   }
 
 }

@@ -1,17 +1,17 @@
-import { ActionReducerMap, createReducer, on } from '@ngrx/store'
-import * as action from './actions';
+import { ActionReducerMap, createReducer, on } from '@ngrx/store';
+import * as Actions from './actions';
 
 export interface StateAuth {
-  manager: StateManger,
-  tokens: string,
-  error: any,
-  role: string,
+  manager: StateManger;
+  tokens: string;
+  error: any;
+  role: string;
 }
 
 export interface StateManger {
   isAuthenticated: boolean;
   email: any;
-  role: string,
+  role: string;
 }
 
 export interface StateError {
@@ -19,8 +19,8 @@ export interface StateError {
 }
 
 export interface StateToken {
-  accessToken: string,
-  refreshToken: string,
+  accessToken: string;
+  refreshToken: string;
 }
 
 export const INIT_STATE: StateManger = {
@@ -40,36 +40,36 @@ export const INIT_STATE_TOKEN: StateToken = {
 
 export const reducer = createReducer(
   INIT_STATE,
-  on(action.authGetCurrentManagerSuccess, (state, action) => ({ ...state, isAuthenticated: true, email: action.email, role: action.role })), //  role: action.role
-  on(action.authLogInManagerSuccess, (state, action) => ({ ...state, email: action.payload.email, role: action.payload.role })),
-  on(action.authVerifyManagerSuccess, (state, action) => ({ ...state, isAuthenticated: true, email: action.payload.email, role: action.payload.role })),
-  on(action.authLogInManagerError, (state, action) => INIT_STATE),
-  on(action.authVerifyManagerError, (state, action) => INIT_STATE),
-  on(action.authLogOutManagerError, (state, action) => INIT_STATE),
-  on(action.authLogOutManagerSuccess, (state, action) => INIT_STATE),
-)
+  on(Actions.authGetCurrentManagerSuccess, (state, action) => ({ ...state, isAuthenticated: true, email: action.email, role: action.role })),
+  on(Actions.authLogInManagerSuccess, (state, action) => ({ ...state, email: action.payload.email, role: action.payload.role })),
+  on(Actions.authVerifyManagerSuccess, (state, action) => ({ ...state, isAuthenticated: true, email: action.payload.email, role: action.payload.role })),
+  on(Actions.authLogInManagerError, (state, action) => INIT_STATE),
+  on(Actions.authVerifyManagerError, (state, action) => INIT_STATE),
+  on(Actions.authLogOutManagerError, (state, action) => INIT_STATE),
+  on(Actions.authLogOutManagerSuccess, (state, action) => INIT_STATE),
+);
 
 export const reducerError = createReducer(
   INIT_STATE_ERROR,
-  on(action.authLogInManagerError, (state, action) => ({ error: action.err })),
-  on(action.authVerifyManagerError, (state, action) => ({ error: action.err })),
-  on(action.authLogOutManagerError, (state, action) => ({ error: action.err })),
-  on(action.authGetCurrentManagerError, (state, action) => ({ error: action.err })),
-  on(action.authSignInCustomerError, (state, action) => ({ error: action.err })),
-  on(action.authLogInManagerRequest, (state, action) => INIT_STATE_ERROR),
-  on(action.authVerifyManagerRequest, (state, action) => INIT_STATE_ERROR),
-  on(action.authLogOutManagerRequest, (state, action) => INIT_STATE_ERROR),
-  on(action.authGetCurrentManagerRequest, (state, action) => INIT_STATE_ERROR),
-)
+  on(Actions.authLogInManagerError, (state, action) => ({ error: action.err })),
+  on(Actions.authVerifyManagerError, (state, action) => ({ error: action.err })),
+  on(Actions.authLogOutManagerError, (state, action) => ({ error: action.err })),
+  on(Actions.authGetCurrentManagerError, (state, action) => ({ error: action.err })),
+  on(Actions.authSignInCustomerError, (state, action) => ({ error: action.err })),
+  on(Actions.authLogInManagerRequest, (state, action) => INIT_STATE_ERROR),
+  on(Actions.authVerifyManagerRequest, (state, action) => INIT_STATE_ERROR),
+  on(Actions.authLogOutManagerRequest, (state, action) => INIT_STATE_ERROR),
+  on(Actions.authGetCurrentManagerRequest, (state, action) => INIT_STATE_ERROR),
+);
 
 export const reducerToken = createReducer(
   INIT_STATE_TOKEN,
-  on(action.authGetCurrentManagerSuccess, (state, action) => action.tokens),
-  on(action.authVerifyManagerSuccess, (state, action) => action.payload.tokens),
-  on(action.authSignInCustomerSuccess, (state, action) => action.payload.tokens),
-  on(action.authVerifyManagerError, (state, action) => INIT_STATE_TOKEN),
-  on(action.authLogOutManagerSuccess, (state, action) => INIT_STATE_TOKEN),
-)
+  on(Actions.authGetCurrentManagerSuccess, (state, action) => action.tokens),
+  on(Actions.authVerifyManagerSuccess, (state, action) => action.payload.tokens),
+  on(Actions.authSignInCustomerSuccess, (state, action) => action.payload.tokens),
+  on(Actions.authVerifyManagerError, (state, action) => INIT_STATE_TOKEN),
+  on(Actions.authLogOutManagerSuccess, (state, action) => INIT_STATE_TOKEN),
+);
 
 export const reducers: ActionReducerMap<any> = {
   manager: reducer,
