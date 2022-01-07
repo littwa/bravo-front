@@ -17,6 +17,9 @@
       <li [routerLink]="['develop']" routerLinkActive="active-link-red">
         Develop
       </li>
+      <li [routerLink]="['module-a']" routerLinkActive="active-link-red">
+        Module-A
+      </li>
       <li *ngIf="role === 'admin'; else empty" [routerLink]="['customers']" routerLinkActive="activelink">
         Customers
       </li>

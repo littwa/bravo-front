@@ -3,6 +3,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { MainLayoutComponent } from './shared/components/main-layout/main-layout.component';
 import { MenuComponent } from './shared/components/menu/menu.component';
 import { AuthGuard } from './shared/guards/auth.guard';
+import { ModuleAModule } from './modules/module-a/module-a.module';
 
 const routes: Routes = [
   {
@@ -12,6 +13,7 @@ const routes: Routes = [
       { path: 'customers', loadChildren: () => import('./customers/customers.module').then(m => m.CustomersModule) },
       { path: 'catalog', loadChildren: () => import('./catalog/catalog.module').then(m => m.CatalogModule) },
       { path: 'develop', loadChildren: () => import('./develop/develop.module').then(m => m.DevelopModule) },
+      { path: 'module-a', loadChildren: () => import('./modules/module-a/module-a.module').then(m => m.ModuleAModule) },
     ]
   },
   { path: 'login', loadChildren: () => import('./login/login.module').then(m => m.LoginModule) },
