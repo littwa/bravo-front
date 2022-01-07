@@ -137,8 +137,10 @@
   font-size: 14px;
   letter-spacing: .2px;
   text-decoration: none !important;
-  text-decoration-style: none;
-  text-decoration-thickness: none !important;
+  // text-decoration-style: none;
+  // text-decoration-thickness: none!important;
+  margin: 0 auto;
+  line-height: 42px;
 }
 
 .google-btn:hover {
