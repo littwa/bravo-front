@@ -17,6 +17,14 @@ import { DndDirective } from './shared/directives/dnd.directive';
 import { AuthSetTokenInterceptor } from './shared/interceptors/auth.interceptor';
 import { AuthGuard } from './shared/guards/auth.guard';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {AuthStateModule} from './core/auth/auth.module';
+import {ErrorStateModule} from './core/error/error.module';
+import {LoadingStateModule} from './core/loading/loading.module';
+import {DataStateModule} from './core/data/data.module';
+import {CatalogStateModule} from './core/catalog/catalog.module';
+import {CustomersStateModule} from './core/customers/customers.module';
+import {OrdersStateModule} from './core/orders/orders.module';
+import {NotifyStateModule} from './core/notify/notify.module';
 
 
 const INTERCEPTOR_PROVIDER = {
@@ -38,7 +46,15 @@ const INTERCEPTOR_PROVIDER = {
     LayoutModule,
     AppRoutingModule,
     LoginModule,
-    CoreModule,
+    // CoreModule,
+    AuthStateModule,
+    ErrorStateModule,
+    LoadingStateModule,
+    DataStateModule,
+    CatalogStateModule,
+    CustomersStateModule,
+    OrdersStateModule,
+    NotifyStateModule,
     StoreModule.forRoot({}),
     EffectsModule.forRoot(),
     StoreDevtoolsModule.instrument(),
