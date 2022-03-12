@@ -1,0 +1,1 @@
+{"ast":null,"code":"export const TOKEN_LOCAL_STORAGE_KEY_ACCESS = \"accessToken\";\nexport const TOKEN_LOCAL_STORAGE_KEY_REFRESH = \"refreshToken\";","map":null,"metadata":{},"sourceType":"module"}

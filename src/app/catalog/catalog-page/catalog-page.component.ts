@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, OnDestroy, OnInit, TemplateRef, ViewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, OnDestroy, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
@@ -19,7 +19,7 @@ import { first, map, startWith, takeUntil } from 'rxjs/operators';
   templateUrl: './catalog-page.component.html',
   styleUrls: ['./catalog-page.component.scss']
 })
-export class CatalogPageComponent implements OnInit, OnDestroy {
+export class CatalogPageComponent implements OnInit, OnDestroy, AfterViewInit {
   isLoading: Observable<boolean> = of(false);
   name = "Catalog";
   //displayedColumns: string[] = ["productCode", "product", "unit", "price", "availability", "action"];
@@ -48,7 +48,7 @@ export class CatalogPageComponent implements OnInit, OnDestroy {
     this.isLoading = this.store.select(getLoading).pipe(map(load => !load));
   }
 
-  ngAfterViewInit() {
+  ngAfterViewInit(): void {
     this.store.select(getCatalog).pipe(takeUntil(this.unsub$)).subscribe(catalog => {
       if (catalog.length === 0) {
         this.store.dispatch(catalogGetAllRequest())
@@ -62,8 +62,8 @@ export class CatalogPageComponent implements OnInit, OnDestroy {
     this.cdr.detectChanges();
   }
 
-  btnModalEmit() {
-    console.log("btnModalEmit")
+  btnModalEmit(): void {
+    console.log('btnModalEmit');
     // this.$strm.next()
   }
 
@@ -74,7 +74,7 @@ export class CatalogPageComponent implements OnInit, OnDestroy {
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
       if (result) {
-        this.$strm.next()
+        this.$strm.next(null);
       }
     });
 
@@ -103,13 +103,13 @@ export class CatalogPageComponent implements OnInit, OnDestroy {
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
       if (result) {
-        this.$strm.next()
+        this.$strm.next(null);
       }
     });
 
   }
 
-  removeProduct(e, row) {
+  removeProduct(e, row): void {
 
     const dialogRef = this.dialog.open(DeleteModalComponent, { data: { name: row.product } });
 
@@ -124,7 +124,7 @@ export class CatalogPageComponent implements OnInit, OnDestroy {
 
   }
 
-  togleAvailability() {
+  togleAvailability(): any {
 
     this.applyFilterChips(this.filterAvailavle)
 
@@ -152,13 +152,13 @@ export class CatalogPageComponent implements OnInit, OnDestroy {
 
   changeAvailability() {
     if (!this.selectAvailability.panelOpen) {
-      console.log("filterAvailable: ", this.filterAvailavle)
+      console.log('filterAvailable: ', this.filterAvailavle)
     }
   }
 
-  ngOnDestroy() {
-    this.unsub$.next(null)
-    this.unsub$.complete()
+  ngOnDestroy(): void {
+    this.unsub$.next(null);
+    this.unsub$.complete();
   }
 
 }
