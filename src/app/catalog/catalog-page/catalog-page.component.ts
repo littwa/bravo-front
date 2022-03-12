@@ -6,8 +6,6 @@ import { MatTableDataSource } from '@angular/material/table';
 import { Observable, of, Subject } from 'rxjs';
 import { AvailabilityProduct } from "../../shared/enums"
 import { DeleteModalComponent } from 'src/app/shared/components/delete-modal/delete-modal.component';
-
-import catalogdb from '../../shared/data/catalogdb.json'
 import { CatalogService } from 'src/app/shared/services/catalog.service';
 import { Store } from '@ngrx/store';
 import { catalogGetAllSuccess, catalogGetAllRequest, catalogDelRequest } from 'src/app/core/catalog/actions';
