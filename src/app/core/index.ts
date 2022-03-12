@@ -17,6 +17,7 @@ export const getAuthState = (state) => state.auth;
 export const getLoadingState = (state) => state.loading;
 export const getNotifyState = (state) => state.notify;
 
+// export const getCatalog = createSelector((s: any) => s.catalog, s => s);
 export const getCatalog = createSelector(getCatalogsState, catalogReducers.getProducts);
 export const getCustomers = createSelector(getCustomersState, customersReducers.getCustomers);
 export const getOrders = createSelector(getOrdersState, ordersReducers.getOrders);
